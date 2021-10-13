@@ -8,4 +8,7 @@ const setScreen = ($container) => {
   app.appendChild($container);
 };
 
+const loginScreen = new Login();
+setScreen(loginScreen.$container)
+
 export { setScreen };

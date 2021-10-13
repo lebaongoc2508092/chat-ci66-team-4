@@ -1,4 +1,6 @@
-import { Login } from "./login.js";
+import { InputGroup } from "./shared/inputGroup.js";
+import { setScreen } from "../index.js";
+import{Login}from "./login.js";
 
 class Register {
   $container = document.createElement("div");
@@ -113,17 +115,16 @@ class Register {
     this.$bodyLeftContainer.appendChild(this.$linkBrand);
 
     this.$form.appendChild(this.$inputGroupEmail.$container);
-    this.$form.appendChild(this.$inputGroupDisplayName.$container)
+    this.$form.appendChild(this.$inputGroupDisplayName.$container);
     this.$form.appendChild(this.$inputGroupPassword.$container);
-    this.$form.appendChild(this.$inputGroupConfirmPassword.$container)
+    this.$form.appendChild(this.$inputGroupConfirmPassword.$container);
     this.$form.appendChild(this.$btnRegister);
     this.$form.appendChild(this.$btnGotoLogin);
 
     this.$inputGroupEmail.$container.classList.add("inputBox");
-    this.$inputGroupDisplayName.$container.classList.add("inputBox")
+    this.$inputGroupDisplayName.$container.classList.add("inputBox");
     this.$inputGroupPassword.$container.classList.add("inputBox");
     this.$inputGroupConfirmPassword.$container.classList.add("inputBox");
-    
 
     this.$btnRegister.classList.add("btnGrpLogin");
     this.$btnGotoLogin.classList.add("btnGrpLogin");

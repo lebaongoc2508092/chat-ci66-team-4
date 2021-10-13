@@ -1,5 +1,6 @@
 import { InputGroup } from "./share/inputgroup.js";
 import{Register} from "./shared/register.js";
+import { setScreen } from "../index.js";
 
 class Login {
   $container = document.createElement("div");
