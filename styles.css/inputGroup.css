@@ -23,8 +23,7 @@
     color:#f9a825;
     background: transparent;
     border-radius: 30px;
-    font-family: "Inconsolata",sans-serif;
-    
+    font-family: "Inconsolata",sans-serif; 
 }
 
 
@@ -39,5 +38,10 @@
     font-size: 18px;
     letter-spacing: 1px;
     border-radius: 30px;
-    font-family: 'Amatic SC', cursive;
+   font-family: 'Amatic SC', cursive;
+}
+
+.btnGrpLogin:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }

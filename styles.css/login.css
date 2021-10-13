@@ -32,6 +32,11 @@ nav ul li{
     line-height: 120px;
     margin: 0 15px;
 }
+nav ul li:hover {
+    opacity: 0.6;
+    cursor: pointer;
+
+}
 nav ul li a{
     position: relative;
     color: #f9a825;
@@ -86,11 +91,14 @@ form{
    
   width: 150px;
    height:43px;
+   cursor: pointer;
 }
 .linkMicrosoft{
     margin-right: 15px;
     width: 120px;
-    height:43px;
+   cursor: pointer;
+   height:43px;
+    
 }
 
 /* footer */
