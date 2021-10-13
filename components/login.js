@@ -30,8 +30,8 @@ class Login {
   $txtTitleH1 = document.createElement("h1");
   $txtSlogan = document.createElement("h3");
   $form = document.createElement("form");
-  $inputGroupEmail = new InputGroup("", "email");
-  $inputGroupPassword = new InputGroup("", "password");
+  $inputGroupEmail = new InputGroup("", "email", "Email hoặc số điện thoại");
+  $inputGroupPassword = new InputGroup("", "password", "Mật khẩu");
 
   $btnLogin = document.createElement("button");
   $btnGotoRegister = document.createElement("button");
@@ -60,15 +60,14 @@ class Login {
 
     //body
     this.$txtTitleH1.innerHTML = "Trò chuyện thật thuận tiện";
-    this.$txtSlogan.innerHTML = "Với Messenger, việc kết nối với những người mình yêu mến thật đơn giản và thú vị.";
     this.$btnLogin.innerHTML = "Đăng Nhập";
     this.$btnGotoRegister.innerHTML = "Đăng ký";
 
     this.$linkAppstore.src = "https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/_-Ce3epqZVV.png";
-    this.$linkAppstore.style.width = "70px";
+
 
     this.$linkMicrosoft.src = "https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/puWREWrr5nk.png";
-    this.$linkMicrosoft.style.width = "70px";
+    
 
     this.$bodyRightContainerIMG.src =
       "https://cdn.dribbble.com/users/3377233/screenshots/6958190/media/6911b68174c0fca030b34efee2438bf6.gif";
@@ -121,14 +120,18 @@ class Login {
     
     this.$btnGotoRegister.addEventListener("click",this.handleGotoRegister)
 
-
-    this.$linkBrand.appendChild(this.$linkAppstore);
+    this.$linkBrand.classList.add("brand")
     this.$linkBrand.appendChild(this.$linkMicrosoft);
+    this.$linkMicrosoft.classList.add("linkMicrosoft")
+    this.$linkBrand.appendChild(this.$linkAppstore);
+    this.$linkAppstore.classList.add("linkAppstore");
 
     this.$bodyRightContainer.appendChild(this.$bodyRightContainerIMG);
           this.$bodyRightContainerIMG.classList.add("img")
 
     this.$footer.appendChild(this.$txtFooter);
+    this.$footer.classList.add("footer");
+    this.$txtFooter.classList.add("txtFooter");
   }
 
   handleGotoRegister=()=>{

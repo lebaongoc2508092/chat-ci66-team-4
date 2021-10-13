@@ -43,8 +43,9 @@ nav ul li a{
 /* body */
 .banner{
     display: flex;
-    margin-top: 100px;
-    margin-left: 80px;
+    margin-top: 90px;
+    margin-left: 150px;
+    margin-bottom: 50px;
 }
 .bodyLeftContainer, .bodyRightContainer{
     flex-basis: 50%;
@@ -75,4 +76,32 @@ form{
 .bodyRightContainer .img{
     width: 100%;
     position: relative;
+}
+
+.brand{
+    display: flex;
+    margin-top: 20px;
+}
+.linkAppstore{
+   
+  width: 150px;
+   height:43px;
+}
+.linkMicrosoft{
+    margin-right: 15px;
+    width: 120px;
+    height:43px;
+}
+
+/* footer */
+.footer{
+    height: 100px;
+    text-align: center;
+    background-color: #7c4dff;
+    display: inherit;
+    line-height: 100px;
+}
+.txtFooter{
+    color: white;
+    font-size: 19px;
 }

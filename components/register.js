@@ -28,12 +28,12 @@ class Register {
   $txtTitleH1 = document.createElement("h1");
   $txtSlogan = document.createElement("h3");
   $form = document.createElement("form");
-  $inputGroupEmail = new InputGroup("", "email");
+  $inputGroupEmail = new InputGroup("", "email", "Nhập email đăng ký");
 
-  $inputGroupDisplayName = new InputGroup("", "text");
+  $inputGroupDisplayName = new InputGroup("", "text", "Nhập tên đăng ký");
 
-  $inputGroupPassword = new InputGroup("", "password");
-  $inputGroupConfirmPassword = new InputGroup("", "password");
+  $inputGroupPassword = new InputGroup("", "password", "Nhập mật khẩu trên 8 kí tự");
+  $inputGroupConfirmPassword = new InputGroup("", "password", "Nhập lại mật khẩu");
 
   $btnRegister = document.createElement("button");
   $btnGotoLogin = document.createElement("button");
@@ -63,17 +63,17 @@ class Register {
     //body
     this.$txtTitleH1.innerHTML = "Trò chuyện thật thuận tiện";
     this.$txtSlogan.innerHTML =
-      "Với Messenger, việc kết nối với những người mình yêu mến thật đơn giản và thú vị.";
-    this.$btnRegister.innerHTML = "Đăng Nhập";
-    this.$btnGotoLogin.innerHTML = "Đăng ký";
-
-    this.$linkAppstore.src =
+      "Nhắn tin đi, nhắn tin nhiều vào hỡi thần dân của ta !!!!!";
+      this.$btnRegister.innerHTML = "Đăng ký";
+      this.$btnGotoLogin.innerHTML = "Đã có tài khoản ?";
+    
+      this.$linkAppstore.src =
       "https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/_-Ce3epqZVV.png";
-    this.$linkAppstore.style.width = "70px";
+ 
 
     this.$linkMicrosoft.src =
       "https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/puWREWrr5nk.png";
-    this.$linkMicrosoft.style.width = "70px";
+
 
     this.$bodyRightContainerIMG.src =
       "https://cdn.dribbble.com/users/3377233/screenshots/6958190/media/6911b68174c0fca030b34efee2438bf6.gif";
@@ -132,13 +132,18 @@ class Register {
     this.$btnGotoLogin.addEventListener("click",this.handleGotoLogin)
 
 
-    this.$linkBrand.appendChild(this.$linkAppstore);
+    this.$linkBrand.classList.add("brand")
     this.$linkBrand.appendChild(this.$linkMicrosoft);
+    this.$linkMicrosoft.classList.add("linkMicrosoft")
+    this.$linkBrand.appendChild(this.$linkAppstore);
+    this.$linkAppstore.classList.add("linkAppstore");
 
     this.$bodyRightContainer.appendChild(this.$bodyRightContainerIMG);
     this.$bodyRightContainerIMG.classList.add("img");
 
     this.$footer.appendChild(this.$txtFooter);
+    this.$footer.classList.add("footer");
+    this.$txtFooter.classList.add("txtFooter");
   }
   handleGotoLogin=()=>{
     const loginScreen = new Login()

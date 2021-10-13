@@ -3,9 +3,10 @@ class InputGroup {
   $label = document.createElement("label");
   $input = document.createElement("input");
 
-  constructor(label, inputType) {
+  constructor(label, inputType, placeholderTxt) {
     this.$label.innerHTML = label;
     this.$input.type = inputType;
+    this.$input.placeholder = placeholderTxt;
     this.$input.classList.add("inputLogin") 
     this.$container.appendChild(this.$label);
     this.$container.appendChild(this.$input);
