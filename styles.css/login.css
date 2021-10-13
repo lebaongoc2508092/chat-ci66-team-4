@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Maven+Pro&family=Work+Sans:ital,wght@1,100&display=swap');
+/* main */
+body{
+    font-family: "Inconsolata",sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+ }
+ /*header  */
+nav{
+    height: 120px;
+    background:white; 
+}
+
+nav .logo{
+    width: 120px;
+    position: absolute;
+    left: 7%;
+}
+
+nav ul{
+    float: right;
+    margin-right: 60px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 120px;
+    margin: 0 15px;
+}
+nav ul li a{
+    position: relative;
+    color: #f9a825;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* body */
+.banner{
+    display: flex;
+    margin-top: 100px;
+    margin-left: 80px;
+}
+.bodyLeftContainer, .bodyRightContainer{
+    flex-basis: 50%;
+}
+
+.bodyLeftContainer h1{
+    font-size: 100px;
+    font-family: 'Maven Pro', sans-serif;
+    background: linear-gradient(to right, #f9a825,#fbc02d,#b388ff, #7c4dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.bodyLeftContainer h3{
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: lighter;
+    color: #7c4dff;
+}
+form{
+    margin-top: 15px;
+}
+
+.bodyLeftContainer .inputBox{
+    margin-bottom: 10px;
+}
+
+.bodyRightContainer .img{
+    width: 100%;
+    position: relative;
+}

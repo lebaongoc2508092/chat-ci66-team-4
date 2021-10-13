@@ -6,6 +6,7 @@ class InputGroup {
   constructor(label, inputType) {
     this.$label.innerHTML = label;
     this.$input.type = inputType;
+    this.$input.classList.add("inputLogin") 
     this.$container.appendChild(this.$label);
     this.$container.appendChild(this.$input);
   }
