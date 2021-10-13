@@ -1,6 +1,6 @@
-import { InputGroup } from "./shared/inputGroup.js";
-import { setScreen } from "../index.js";
+import { InputGroup } from "./share/inputGroup.js";
 import{Login}from "./login.js";
+import { setScreen } from "../index.js";
 
 class Register {
   $container = document.createElement("div");
@@ -129,6 +129,9 @@ class Register {
     this.$btnRegister.classList.add("btnGrpLogin");
     this.$btnGotoLogin.classList.add("btnGrpLogin");
 
+    this.$btnGotoLogin.addEventListener("click",this.handleGotoLogin)
+
+
     this.$linkBrand.appendChild(this.$linkAppstore);
     this.$linkBrand.appendChild(this.$linkMicrosoft);
 
@@ -136,6 +139,10 @@ class Register {
     this.$bodyRightContainerIMG.classList.add("img");
 
     this.$footer.appendChild(this.$txtFooter);
+  }
+  handleGotoLogin=()=>{
+    const loginScreen = new Login()
+    setScreen(loginScreen.$container)
   }
 }
 

@@ -1,5 +1,5 @@
 import { InputGroup } from "./share/inputgroup.js";
-import{Register} from "./shared/register.js";
+import{Register} from "./register.js";
 import { setScreen } from "../index.js";
 
 class Login {
@@ -132,8 +132,8 @@ class Login {
   }
 
   handleGotoRegister=()=>{
-    const Registerscreen=new Register()
-    setScreen(Registerscreen.$container)
+    const registerScreen = new Register()
+    setScreen(registerScreen.$container)
   }
 }
 
