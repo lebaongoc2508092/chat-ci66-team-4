@@ -105,7 +105,7 @@ form{
 .footer{
     height: 100px;
     text-align: center;
-    background-color: #7c4dff;
+    background: linear-gradient(to right, #f9a825,#fbc02d,#b388ff, #7c4dff);
     display: inherit;
     line-height: 100px;
 }

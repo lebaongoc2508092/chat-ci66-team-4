@@ -65,7 +65,9 @@ class Register {
     this.$txtSlogan.innerHTML =
       "Nhắn tin đi, nhắn tin nhiều vào hỡi thần dân của ta !!!!!";
       this.$btnRegister.innerHTML = "Đăng ký";
+      this.$btnRegister.type = "submit";
       this.$btnGotoLogin.innerHTML = "Đã có tài khoản ?";
+      this.$btnGotoLogin.type = "button";
     
       this.$linkAppstore.src =
       "https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/_-Ce3epqZVV.png";
@@ -130,7 +132,7 @@ class Register {
     this.$btnGotoLogin.classList.add("btnGrpLogin");
 
     this.$btnGotoLogin.addEventListener("click",this.handleGotoLogin)
-
+    this.$form.addEventListener("submit",this.handleSubmit);
 
     this.$linkBrand.classList.add("brand")
     this.$linkBrand.appendChild(this.$linkMicrosoft);
@@ -148,6 +150,33 @@ class Register {
   handleGotoLogin=()=>{
     const loginScreen = new Login()
     setScreen(loginScreen.$container)
+  }
+  handleSubmit=(event)=>{
+    event.preventDefault();
+    const email = this.$inputGroupEmail.getValue();
+    if (!email) {
+      this.$inputGroupEmail.setErrorMessage("Email cannot be empty !");   
+    }else {
+      this.$inputGroupEmail.setErrorMessage("");   
+    }
+    const displayName = this.$inputGroupDisplayName.getValue();
+        if(!displayName) {
+            this.$inputGroupDisplayName.setErrorMessage('Please enter a display name')
+        }else{
+            this.$inputGroupDisplayName.setErrorMessage("")
+        }
+        const password = this.$inputGroupPassword.getValue();
+        if(password.length < 8) {
+            this.$inputGroupPassword.setErrorMessage('Please enter 8 or more characters')
+        }else{
+            this.$inputGroupPassword.setErrorMessage("")
+        }
+        const passwordConfirm = this.$inputGroupConfirmPassword.getValue();
+        if(passwordConfirm == password ) {
+            this.$inputGroupConfirmPassword.setErrorMessage("")
+        }else{
+            this.$inputGroupConfirmPassword.setErrorMessage("You have entered wrong, please re-enter")
+        }
   }
 }
 
