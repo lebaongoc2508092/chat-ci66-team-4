@@ -1,5 +1,5 @@
 import { InputGroup } from "./share/inputGroup.js";
-import{Login}from "./login.js";
+import { Login } from "./login.js";
 import { setScreen } from "../index.js";
 
 class Register {
@@ -32,8 +32,16 @@ class Register {
 
   $inputGroupDisplayName = new InputGroup("", "text", "Nhập tên đăng ký");
 
-  $inputGroupPassword = new InputGroup("", "password", "Nhập mật khẩu trên 8 kí tự");
-  $inputGroupConfirmPassword = new InputGroup("", "password", "Nhập lại mật khẩu");
+  $inputGroupPassword = new InputGroup(
+    "",
+    "password",
+    "Nhập mật khẩu trên 8 kí tự"
+  );
+  $inputGroupConfirmPassword = new InputGroup(
+    "",
+    "password",
+    "Nhập lại mật khẩu"
+  );
 
   $btnRegister = document.createElement("button");
   $btnGotoLogin = document.createElement("button");
@@ -64,18 +72,16 @@ class Register {
     this.$txtTitleH1.innerHTML = "Trò chuyện thật thuận tiện";
     this.$txtSlogan.innerHTML =
       "Nhắn tin đi, nhắn tin nhiều vào hỡi thần dân của ta !!!!!";
-      this.$btnRegister.innerHTML = "Đăng ký";
-      this.$btnRegister.type = "submit";
-      this.$btnGotoLogin.innerHTML = "Đã có tài khoản ?";
-      this.$btnGotoLogin.type = "button";
-    
-      this.$linkAppstore.src =
+    this.$btnRegister.innerHTML = "Đăng ký";
+    this.$btnRegister.type = "submit";
+    this.$btnGotoLogin.innerHTML = "Đã có tài khoản ?";
+    this.$btnGotoLogin.type = "button";
+
+    this.$linkAppstore.src =
       "https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/_-Ce3epqZVV.png";
- 
 
     this.$linkMicrosoft.src =
       "https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/puWREWrr5nk.png";
-
 
     this.$bodyRightContainerIMG.src =
       "https://cdn.dribbble.com/users/3377233/screenshots/6958190/media/6911b68174c0fca030b34efee2438bf6.gif";
@@ -131,12 +137,12 @@ class Register {
     this.$btnRegister.classList.add("btnGrpLogin");
     this.$btnGotoLogin.classList.add("btnGrpLogin");
 
-    this.$btnGotoLogin.addEventListener("click",this.handleGotoLogin)
-    this.$form.addEventListener("submit",this.handleSubmit);
+    this.$btnGotoLogin.addEventListener("click", this.handleGotoLogin);
+    this.$form.addEventListener("submit", this.handleSubmit);
 
-    this.$linkBrand.classList.add("brand")
+    this.$linkBrand.classList.add("brand");
     this.$linkBrand.appendChild(this.$linkMicrosoft);
-    this.$linkMicrosoft.classList.add("linkMicrosoft")
+    this.$linkMicrosoft.classList.add("linkMicrosoft");
     this.$linkBrand.appendChild(this.$linkAppstore);
     this.$linkAppstore.classList.add("linkAppstore");
 
@@ -147,37 +153,58 @@ class Register {
     this.$footer.classList.add("footer");
     this.$txtFooter.classList.add("txtFooter");
   }
-  handleGotoLogin=()=>{
-    const loginScreen = new Login()
-    setScreen(loginScreen.$container)
-  }
-  handleSubmit=(event)=>{
+  handleGotoLogin = () => {
+    const loginScreen = new Login();
+    setScreen(loginScreen.$container);
+  };
+
+
+  handleSubmit = (event) => {
     event.preventDefault();
     const email = this.$inputGroupEmail.getValue();
     if (!email) {
-      this.$inputGroupEmail.setErrorMessage("Email cannot be empty !");   
-    }else {
-      this.$inputGroupEmail.setErrorMessage("");   
+      this.$inputGroupEmail.setErrorMessage("Email cannot be empty !");
+    } else {
+      this.$inputGroupEmail.setErrorMessage("");
     }
     const displayName = this.$inputGroupDisplayName.getValue();
-        if(!displayName) {
-            this.$inputGroupDisplayName.setErrorMessage('Please enter a display name')
-        }else{
-            this.$inputGroupDisplayName.setErrorMessage("")
-        }
-        const password = this.$inputGroupPassword.getValue();
-        if(password.length < 8) {
-            this.$inputGroupPassword.setErrorMessage('Please enter 8 or more characters')
-        }else{
-            this.$inputGroupPassword.setErrorMessage("")
-        }
-        const passwordConfirm = this.$inputGroupConfirmPassword.getValue();
-        if(passwordConfirm == password ) {
-            this.$inputGroupConfirmPassword.setErrorMessage("")
-        }else{
-            this.$inputGroupConfirmPassword.setErrorMessage("You have entered wrong, please re-enter")
-        }
-  }
+    if (!displayName) {
+      this.$inputGroupDisplayName.setErrorMessage(
+        "Please enter a display name"
+      );
+    } else {
+      this.$inputGroupDisplayName.setErrorMessage("");
+    }
+    const password = this.$inputGroupPassword.getValue();
+    if (password.length < 8) {
+      this.$inputGroupPassword.setErrorMessage(
+        "Please enter 8 or more characters"
+      );
+    } else {
+      this.$inputGroupPassword.setErrorMessage("");
+    }
+    const passwordConfirm = this.$inputGroupConfirmPassword.getValue();
+    if (passwordConfirm == password) {
+      this.$inputGroupConfirmPassword.setErrorMessage("");
+    } else {
+      this.$inputGroupConfirmPassword.setErrorMessage(
+        "You have entered wrong, please re-enter"
+      );
+    }
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        firebase
+          .auth()
+          .currentUser.sendEmailVerification()
+          .then(() => {
+            alert("Hãy xác nhận trong e-mail !");
+            
+          });
+      });
+  };
 }
 
 export { Register };
