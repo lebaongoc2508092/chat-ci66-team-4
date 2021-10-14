@@ -1,5 +1,5 @@
-import { CreateConversationForm } from "./conversationform.js";
-import { ConversationItem } from "./conversationitems.js";
+import { CreateConversationForm } from "./conversationForm.js";
+import { ConversationItem } from "./conversationItems.js";
 
 class ConversationsList {
   $container = document.createElement("div");
@@ -10,10 +10,10 @@ class ConversationsList {
   conversationItems = [];
 
   constructor() {
-    this.$btnCreatConversations.innerHTML = "+ Tạo mới";
+    this.$btnCreatConversations.innerHTML = "+ Tạo mới một đoạn hội thoại";
     this.$btnCreatConversations.addEventListener(
       "click",
-      this.handleCreateConversationList
+      this.handleCreateConversationClick
     );
     this.$container.appendChild(this.$btnCreatConversations);
     this.$container.appendChild(this.$createConversationForm.$container);
@@ -23,13 +23,13 @@ class ConversationsList {
     this.onConversationItemClick = listener;
   };
 
-  handleCreateConversationList = () => {
+  handleCreateConversationClick = () => {
     this.$createConversationForm.setVisible(true);
   };
 
   handleConversationAdded = (id, name, users) => {
     const item = new ConversationItem(id, name, users);
-    item.setOnclick(() => {
+    item.setOnclick((id, name, users) => {
       this.onConversationItemClick({
         id: id,
         name: name,

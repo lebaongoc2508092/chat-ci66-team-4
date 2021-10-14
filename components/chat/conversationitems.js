@@ -29,7 +29,7 @@ class ConversationItem {
   setHighLight=(isHighlighted)=>{
       if(isHighlighted){
           this.$container.style.background="purple"
-          this.$container.style.color="yelow"
+          this.$container.style.color="white"
       }
       else{
           this.$container.style.background="white"
