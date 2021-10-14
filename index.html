@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CI66-Team4 Chat App</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="/styles.css/login.css">
-    <link rel="stylesheet" href="/styles.css/inputGroup.css">
-    <link rel="stylesheet" href="/styles.css/profile.css">
-</head>
-<body>
-    <div id="new_app">
-        
-    </div>
-</body>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/styles.css/login.css" />
+    <link rel="stylesheet" href="/styles.css/inputGroup.css" />
+    <link rel="stylesheet" href="/styles.css/profile.css" />
+  </head>
+  <body>
+    <div id="new_app"></div>
+  </body>
 
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
-<script>
-    
+  <script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyDUcKTwlEwLylhSwNm99r0tIAa8JxneUSI",
@@ -28,12 +26,13 @@
       projectId: "ci66-webapp-team4",
       storageBucket: "ci66-webapp-team4.appspot.com",
       messagingSenderId: "686686521114",
-      appId: "1:686686521114:web:9d2928434fcb316e6e4ea3"
+      appId: "1:686686521114:web:9d2928434fcb316e6e4ea3",
     };
-  
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
   </script>
 
-<script src="index.js" type="module"></script>
+  <script src="index.js" type="module"></script>
 </html>
