@@ -29,7 +29,7 @@ class ConversationsList {
 
   handleConversationAdded = (id, name, users) => {
     const item = new ConversationItem(id, name, users);
-    item.setOnclick((id,name,users) => {
+    item.setOnclick(() => {
       this.onConversationItemClick({
         id: id,
         name: name,
@@ -40,6 +40,15 @@ class ConversationsList {
     this.$container.appendChild(item.$container)
   };
 
+  setActiveConversation = (conversation) => {
+    this.conversationItems.forEach((item) => {
+      if (item.id === conversation.id) {
+        item.setHighLight(true);
+      } else {
+        item.setHighLight(false);
+      }
+    });
+  };
  
 
 }
