@@ -2,6 +2,7 @@ import { Profile } from "./chat/profile.js";
 import { ConversationsList } from "./chat/conversationsList.js";
 import { TitleBar } from "./chat/titleBar.js";
 import { Composer } from "./chat/composer.js";
+import {MessageList} from "./chat/messageList.js";
 
 class Chat {
   activeConversation = null;
@@ -14,6 +15,7 @@ class Chat {
   $profile = new Profile();
   $titleBar = new TitleBar();
   $composer = new Composer();
+  $messageList = new MessageList();
 
   $conversationList = new ConversationsList();
 
@@ -33,6 +35,7 @@ class Chat {
     this.$containerLeft.appendChild(this.$conversationList.$container);
 
     this.$containerMiddle.appendChild(this.$titleBar.$container);
+    this.$containerMiddle.appendChild(this.$messageList.$container)
 
     this.subscribeConversation();
     this.$containerMiddle.appendChild(this.$composer.$container);
@@ -43,6 +46,7 @@ class Chat {
     this.$titleBar.setName(conversation.name);
     this.$conversationList.setActiveConversation(this.activeConversation);
     this.$composer.setActiveConversation(this.activeConversation);
+    this.$messageList.clearMessage();
     this.subscribeMessages();
   };
 
@@ -69,7 +73,7 @@ class Chat {
       .where("ConversationId", "==", this.activeConversation.id)
       .onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
-          console.log(change.doc.data());
+          this.$messageList.addMessage(change.doc.data())
         });
       });
   };
