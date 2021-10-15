@@ -6,7 +6,7 @@ class CreateConversationForm {
   $modal = new Modal();
 
   $form = document.createElement("form");
-  $conversationNameInput = new InputGroup("Tạo đoạn hội thoại mới", "text", "Nhập tên đoạn hội thoại");
+  $conversationNameInput = new InputGroup("Tạo mới", "text", "Nhập tên đoạn hội thoại");
 
   constructor() {
     this.$container.appendChild(this.$modal.$container);
