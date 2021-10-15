@@ -1,0 +1,17 @@
+.containerchat {
+   max-width: 1400px;
+   margin: auto;
+    height: 100vh;
+    display: flex;
+
+}
+.containerleft {
+    flex: 1;
+  
+}
+.containermiddle {
+    flex: 2;
+}
+.containerright {
+    flex:0.8;
+}

@@ -14,12 +14,16 @@ class Chat {
   $conversationList = new ConversationsList();
 
   constructor() {
+    this.$container.classList.add("containerchat")
     this.$conversationList.setOnConversationItemClick(
       this.setActiveConversation
     );
     this.$container.appendChild(this.$containerLeft);
+    this.$containerLeft.classList.add("containerleft")
     this.$container.appendChild(this.$containerMiddle);
+    this.$containerMiddle.classList.add("containermiddle")
     this.$container.appendChild(this.$containerRight);
+    this.$containerRight.classList.add("containerright")
 
     this.$containerLeft.appendChild(this.$profile.$container);
     this.$containerMiddle.appendChild(this.$titleBar.$container);
