@@ -22,9 +22,10 @@ class Chat {
     this.$container.appendChild(this.$containerRight);
 
     this.$containerLeft.appendChild(this.$profile.$container);
+    this.$containerLeft.appendChild(this.$conversationList.$container);
+    
     this.$containerMiddle.appendChild(this.$titleBar.$container);
 
-    this.$containerLeft.appendChild(this.$conversationList.$container);
     this.subscribeConversation();
   }
 

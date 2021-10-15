@@ -112,6 +112,7 @@ class Login {
     this.$form.appendChild(this.$inputGroupPassword.$container);
     this.$form.appendChild(this.$btnLogin);
     this.$form.appendChild(this.$btnGotoRegister);
+    this.$form.classList.add("formLogin")
     this.$inputGroupEmail.$container.classList.add("inputBox");
     this.$inputGroupPassword.$container.classList.add("inputBox");
     this.$btnLogin.classList.add("btnGrpLogin");
