@@ -28,6 +28,7 @@ class Profile{
     handleLogout = () => {
         firebase.auth().signOut()
     }
-}
+    
+    }
 
 export {Profile};
