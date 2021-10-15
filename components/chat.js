@@ -26,9 +26,10 @@ class Chat {
     this.$containerRight.classList.add("containerright")
 
     this.$containerLeft.appendChild(this.$profile.$container);
+    this.$containerLeft.appendChild(this.$conversationList.$container);
+    
     this.$containerMiddle.appendChild(this.$titleBar.$container);
 
-    this.$containerLeft.appendChild(this.$conversationList.$container);
     this.subscribeConversation();
   }
 

@@ -1,3 +1,15 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Maven+Pro&family=Work+Sans:ital,wght@1,100&display=swap');
+/* main */
+body{
+    font-family: "Inconsolata",sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+ }
 
 
