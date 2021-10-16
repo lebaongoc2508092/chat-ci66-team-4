@@ -9,6 +9,7 @@ class ModalOptions {
   
   $body = document.createElement("div");
 
+
   $name = new ModalOptionsContent("Name", "","");
   $email =  new ModalOptionsContent("Email", "","");
   $age =  new ModalOptionsContent("Age", "","");
