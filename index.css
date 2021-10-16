@@ -12,4 +12,13 @@ body{
     text-decoration: none;
  }
 
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to top, #7c4dff,#b388ff,#fbc02d, #f9a825);
+    border-radius: 30px;
+}
+
+
 

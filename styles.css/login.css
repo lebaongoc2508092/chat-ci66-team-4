@@ -39,6 +39,7 @@ nav ul li a{
     margin-top: 90px;
     margin-left: 150px;
     margin-bottom: 50px;
+    margin-right: 5px;
 }
 .bodyLeftContainer, .bodyRightContainer{
     flex-basis: 50%;
@@ -69,6 +70,7 @@ nav ul li a{
 .bodyRightContainer .img{
     width: 100%;
     position: relative;
+    
 }
 
 .brand{

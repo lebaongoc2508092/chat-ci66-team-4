@@ -1,6 +1,6 @@
 class Modal {
   $container = document.createElement("div");
-  $modalContainer = document.createElement("div");
+  $modalContainer = document.createElement("div");//background
   $header = document.createElement("div");
   $body = document.createElement("div");
   $footer = document.createElement("div");
