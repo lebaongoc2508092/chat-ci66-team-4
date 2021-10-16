@@ -9,7 +9,7 @@ class Profile{
 
     constructor() {
         this.$displayName.innerHTML = "Name";
-        //this.$options.innerHTML = "Option"
+        // this.$options.$container.innerHTML = "Option"
 
         this.$btnLogout.type = "button"
         this.$btnLogout.innerHTML = "Logout"
@@ -22,7 +22,7 @@ class Profile{
         this.$btnLogout.addEventListener("click", this.handleLogout)
         this.$avatar.classList.add("avatar");
         this.$displayName.classList.add("displayname");
-        this.$options.classList.add("options");
+        this.$options.$container.classList.add("options");
         this.$btnLogout.classList.add("btnGrpLogin");
 
     }
