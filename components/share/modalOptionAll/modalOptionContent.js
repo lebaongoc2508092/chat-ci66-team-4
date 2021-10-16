@@ -1,4 +1,4 @@
-class ModalOptionsContens{
+class ModalOptionsContent{
     $container = document.createElement("div");
     $ingredientName = document.createElement("label");
     $ingredientNameContent = document.createElement("span");
@@ -15,4 +15,4 @@ class ModalOptionsContens{
     }
 }
 
-export {ModalOptionsContens};
+export { ModalOptionsContent };

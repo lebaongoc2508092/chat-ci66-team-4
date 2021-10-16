@@ -1,20 +1,23 @@
+import { ModalOptions } from "./share/modalOptions.js";
+
 class Profile{
     $container = document.createElement("div");
 
     $avatar = document.createElement("div");
     $displayName = document.createElement("div");
-    $options = document.createElement("div");
+    $options = new ModalOptions();
     $btnLogout = document.createElement("button");
 
     constructor() {
         this.$displayName.innerHTML = "Name";
-        this.$options.innerHTML = "Option"
+        //this.$options.innerHTML = "Option"
+
         this.$btnLogout.type = "button"
         this.$btnLogout.innerHTML = "Logout"
 
         this.$container.appendChild(this.$avatar);
         this.$container.appendChild(this.$displayName);
-        this.$container.appendChild(this.$options);
+        this.$container.appendChild(this.$options.$container);
         this.$container.appendChild(this.$btnLogout);
         
         this.$btnLogout.addEventListener("click", this.handleLogout)

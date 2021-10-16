@@ -2,8 +2,7 @@ import { Profile } from "./chat/profile.js";
 import { ConversationsList } from "./chat/conversationsList.js";
 import { TitleBar } from "./chat/titleBar.js";
 import { Composer } from "./chat/composer.js";
-import {MessageList} from "./chat/messageList.js";
-import {ModalOptions} from "./chat/modalOptions.js";
+import { MessageList } from "./chat/messageList.js";
 
 class Chat {
   activeConversation = null;
@@ -14,7 +13,7 @@ class Chat {
   $containerMiddle = document.createElement("div");
   $containerRight = document.createElement("div");
   $profile = new Profile();
-  $options = new ModalOptions();
+  //$options = new ModalOptions();
   $titleBar = new TitleBar();
   $composer = new Composer();
   $messageList = new MessageList();
@@ -34,7 +33,6 @@ class Chat {
     this.$containerRight.classList.add("containerright");
 
     this.$containerLeft.appendChild(this.$profile.$container);
-    this.$profile.appendChild(this.$options.$container);
     this.$containerLeft.appendChild(this.$conversationList.$container);
 
     this.$containerMiddle.appendChild(this.$titleBar.$container);

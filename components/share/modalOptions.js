@@ -1,4 +1,4 @@
-import { ModalOptionsContens } from "./modalOptionAll/modalOptionAll.js";
+import { ModalOptionsContent } from "./modalOptionAll/modalOptionContent.js";
 
 class ModalOptions {
   $container = document.createElement("div");
@@ -8,12 +8,13 @@ class ModalOptions {
   $imgAva = document.createElement("img");
   
   $body = document.createElement("div");
-  $name = new ModalOptionsContens("Name", "","Change Name");
-  $email =  new ModalOptionsContens("Email", "","Change Email");
-  $age =  new ModalOptionsContens("Age", "","Change Age");
-  $birthdate =  new ModalOptionsContens("Birthdate", "","Change Birthdate");
-  $country =  new ModalOptionsContens("Country", "","Change Country");
-  $phone =  new ModalOptionsContens("Tel", "","Change Phone Number");
+
+  $name = new ModalOptionsContent("Name", "","Change Name");
+  $email =  new ModalOptionsContent("Email", "","Change Email");
+  $age =  new ModalOptionsContent("Age", "","Change Age");
+  $birthdate =  new ModalOptionsContent("Birthdate", "","Change Birthdate");
+  $country =  new ModalOptionsContent("Country", "","Change Country");
+  $phone =  new ModalOptionsContent("Tel", "","Change Phone Number");
 
   $passwordChange = document.createElement("button");
 
@@ -47,4 +48,4 @@ class ModalOptions {
   }
 }
 
-export{ModalOptions}
+export{ ModalOptions }
