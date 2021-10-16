@@ -42,8 +42,8 @@ class Chat {
 
     this.$containerRight.appendChild(this.$userList.$container);
 
-    this.subscribeConversation();
     this.$containerMiddle.appendChild(this.$composer.$container);
+    this.subscribeConversation();
   }
 
   setActiveConversation = (conversation) => {
@@ -57,7 +57,9 @@ class Chat {
   };
 
   subscribeConversation = () => {
-    db.collection("conversations").onSnapshot((snapshot) => {
+    db.collection("conversations")
+    .where("user","array-contais", firebase.auth().currentUser.email)
+    .onSnapshot((snapshot) => {
       snapshot.docChanges().forEach((change) => {
         if (change.type === "added") {
           this.$conversationList.handleConversationAdded(
