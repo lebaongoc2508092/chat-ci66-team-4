@@ -9,12 +9,12 @@ class ModalOptions {
   
   $body = document.createElement("div");
 
-  $name = new ModalOptionsContent("Name", "","Change Name");
-  $email =  new ModalOptionsContent("Email", "","Change Email");
-  $age =  new ModalOptionsContent("Age", "","Change Age");
-  $birthdate =  new ModalOptionsContent("Birthdate", "","Change Birthdate");
-  $country =  new ModalOptionsContent("Country", "","Change Country");
-  $phone =  new ModalOptionsContent("Tel", "","Change Phone Number");
+  $name = new ModalOptionsContent("Name", "","");
+  $email =  new ModalOptionsContent("Email", "","");
+  $age =  new ModalOptionsContent("Age", "","");
+  $birthdate =  new ModalOptionsContent("Birthdate", "","");
+  $country =  new ModalOptionsContent("Country", "","");
+  $phone =  new ModalOptionsContent("Tel", "","");
 
   $passwordChange = document.createElement("button");
 
@@ -24,6 +24,9 @@ class ModalOptions {
 
   constructor(){
     this.$passwordChange.innerHTML = "Change Password";
+
+    this.$btnCancel.innerHTML="Cancel"
+    this.$btnSave.innerHTML="Save"
 
     this.$container.appendChild(this.$modalOptionsContainer);
 
@@ -44,8 +47,12 @@ class ModalOptions {
     this.$footer.appendChild(this.$btnCancel);
     this.$footer.appendChild(this.$btnSave);
 
-
   }
+
+  setonCancelClick=(listener)=>{
+    this.$btnCancel.onclick=listener
+    this.$btnSave.onclick=listener
+}
 }
 
 export{ ModalOptions }

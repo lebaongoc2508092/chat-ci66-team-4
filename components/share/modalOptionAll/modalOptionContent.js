@@ -7,7 +7,7 @@ class ModalOptionsContent{
     constructor(label, spanContent, spanContentChanged) {
         this.$ingredientName.innerHTML = label;
         this.$ingredientNameContent.innerHTML = spanContent;
-        this.$ingredientNameContentChanged.innerHTML = spanContentChanged;
+        this.$ingredientNameContentChanged.innerHTML = spanContentChanged + "✏️";
         
         this.$container.appendChild(this.$ingredientName);
         this.$container.appendChild(this.$ingredientNameContent);
