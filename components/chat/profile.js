@@ -1,5 +1,4 @@
-import { ModalOptions } from "./share/modalOptions.js";
-
+import {ModalOptions} from '../share/modalOptions.js';
 class Profile{
     $container = document.createElement("div");
 
