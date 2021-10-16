@@ -3,6 +3,7 @@ import { ConversationsList } from "./chat/conversationsList.js";
 import { TitleBar } from "./chat/titleBar.js";
 import { Composer } from "./chat/composer.js";
 import { MessageList } from "./chat/messageList.js";
+import { UserList } from "./chat/userList.js";
 
 class Chat {
   activeConversation = null;
@@ -17,6 +18,7 @@ class Chat {
   $titleBar = new TitleBar();
   $composer = new Composer();
   $messageList = new MessageList();
+  $userList = new UserList();
 
   $conversationList = new ConversationsList();
 
@@ -36,7 +38,9 @@ class Chat {
     this.$containerLeft.appendChild(this.$conversationList.$container);
 
     this.$containerMiddle.appendChild(this.$titleBar.$container);
-    this.$containerMiddle.appendChild(this.$messageList.$container)
+    this.$containerMiddle.appendChild(this.$messageList.$container);
+
+    this.$containerRight.appendChild(this.$userList.$container);
 
     this.subscribeConversation();
     this.$containerMiddle.appendChild(this.$composer.$container);
@@ -47,6 +51,7 @@ class Chat {
     this.$titleBar.setName(conversation.name);
     this.$conversationList.setActiveConversation(this.activeConversation);
     this.$composer.setActiveConversation(this.activeConversation);
+    this.$userList.setActiveConversation(this.activeConversation);
     this.$messageList.clearMessage();
     this.subscribeMessages();
   };
@@ -56,6 +61,18 @@ class Chat {
       snapshot.docChanges().forEach((change) => {
         if (change.type === "added") {
           this.$conversationList.handleConversationAdded(
+            change.doc.id,
+            change.doc.data().name,
+            change.doc.data().users
+          );
+        }
+        if (change.type === "modified") {
+          this.$conversationList.handleConversationAdded(
+            change.doc.id,
+            change.doc.data().name,
+            change.doc.data().users
+          );
+          this.$userList.handleConversationUpdate(
             change.doc.id,
             change.doc.data().name,
             change.doc.data().users
@@ -72,9 +89,11 @@ class Chat {
     this.messagesSubscriber = db
       .collection("messages")
       .where("ConversationId", "==", this.activeConversation.id)
+      .orderBy("sentAt")
       .onSnapshot((snapshot) => {
         snapshot.docChanges().forEach((change) => {
-          this.$messageList.addMessage(change.doc.data())
+          if(change.type === "added")
+          this.$messageList.addMessage(change.doc.data());
         });
       });
   };
