@@ -58,7 +58,7 @@ class Chat {
 
   subscribeConversation = () => {
     db.collection("conversations")
-    .where("user","array-contais", firebase.auth().currentUser.email)
+    .where("users","array-contains", firebase.auth().currentUser.email)
     .onSnapshot((snapshot) => {
       snapshot.docChanges().forEach((change) => {
         if (change.type === "added") {
