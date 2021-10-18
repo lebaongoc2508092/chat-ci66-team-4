@@ -54,6 +54,7 @@ class Chat {
     this.$userList.setActiveConversation(this.activeConversation);
     this.$messageList.clearMessage();
     this.subscribeMessages();
+    // console.log("GBYE")
   };
 
   subscribeConversation = () => {
@@ -88,12 +89,15 @@ class Chat {
     if (this.messagesSubscriber !== null) {
       this.messagesSubscriber();
     }
+    // console.log(this.activeConversation)
     this.messagesSubscriber = db
       .collection("messages")
       .where("ConversationId", "==", this.activeConversation.id)
-      .orderBy("sentAt")
+      .orderBy("sentAt") //add
       .onSnapshot((snapshot) => {
+        console.log(this.activeConversation)
         snapshot.docChanges().forEach((change) => {
+          console.log(change)
           if(change.type === "added")
           this.$messageList.addMessage(change.doc.data());
         });
