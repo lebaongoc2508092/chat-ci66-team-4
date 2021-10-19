@@ -36,8 +36,16 @@ class ConversationsList {
         users: users,
       });
     });
-    this.conversationItems.push(item)
-    this.$container.appendChild(item.$container)
+    this.conversationItems.push(item);
+    this.$container.appendChild(item.$container);
+  };
+
+  handleConversationUpdated = (id, name, users) => {
+    this.conversationItems.forEach((item) => {
+      if (item.id === id) {
+        item.setUsers(users);
+      }
+    });
   };
 
   setActiveConversation = (conversation) => {
@@ -49,8 +57,6 @@ class ConversationsList {
       }
     });
   };
- 
-
 }
 
 export { ConversationsList };

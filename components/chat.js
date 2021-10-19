@@ -51,38 +51,38 @@ class Chat {
     this.$titleBar.setName(conversation.name);
     this.$conversationList.setActiveConversation(this.activeConversation);
     this.$composer.setActiveConversation(this.activeConversation);
-    this.$userList.setActiveConversation(this.activeConversation);
     this.$messageList.clearMessage();
+    this.$userList.setActiveConversation(this.activeConversation);
     this.subscribeMessages();
     // console.log("GBYE")
   };
 
   subscribeConversation = () => {
     db.collection("conversations")
-    .where("users","array-contains", firebase.auth().currentUser.email)
-    .onSnapshot((snapshot) => {
-      snapshot.docChanges().forEach((change) => {
-        if (change.type === "added") {
-          this.$conversationList.handleConversationAdded(
-            change.doc.id,
-            change.doc.data().name,
-            change.doc.data().users
-          );
-        }
-        if (change.type === "modified") {
-          this.$conversationList.handleConversationAdded(
-            change.doc.id,
-            change.doc.data().name,
-            change.doc.data().users
-          );
-          this.$userList.handleConversationUpdate(
-            change.doc.id,
-            change.doc.data().name,
-            change.doc.data().users
-          );
-        }
+      .where("users", "array-contains", firebase.auth().currentUser.email)
+      .onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === "added") {
+            this.$conversationList.handleConversationAdded(
+              change.doc.id,
+              change.doc.data().name,
+              change.doc.data().users
+            );
+          }
+          if (change.type === "modified") {
+            this.$conversationList.handleConversationUpdated(
+              change.doc.id,
+              change.doc.data().name,
+              change.doc.data().users
+            );
+            this.$userList.handleConversationUpdated(
+              change.doc.id,
+              change.doc.data().name,
+              change.doc.data().users
+            );
+          }
+        });
       });
-    });
   };
 
   subscribeMessages = () => {
@@ -95,11 +95,11 @@ class Chat {
       .where("ConversationId", "==", this.activeConversation.id)
       .orderBy("sentAt") //add
       .onSnapshot((snapshot) => {
-        console.log(this.activeConversation)
+       //console.log(this.activeConversation);
         snapshot.docChanges().forEach((change) => {
-          console.log(change)
-          if(change.type === "added")
-          this.$messageList.addMessage(change.doc.data());
+         // console.log(change);
+          if (change.type === "added")
+            this.$messageList.addMessage(change.doc.data());
         });
       });
   };

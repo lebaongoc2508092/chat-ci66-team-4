@@ -35,7 +35,7 @@ class UserList {
       this.$userList.appendChild($li);
     });
   };
-  handleConversationUpdate = (id, name, users) => {
+  handleConversationUpdated = (id, name, users) => {
     if (!this.activeConversation || this.activeConversation.id != id) {
       return;
     }

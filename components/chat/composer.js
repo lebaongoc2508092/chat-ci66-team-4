@@ -76,6 +76,7 @@ class Composer {
       content: this.$input.value,
       sender: firebase.auth().currentUser.email,
       ConversationId: this.activeConversation.id,
+      sentAt: firebase.firestore.FieldValue.serverTimestamp(), //add new
     });
   };
 }
