@@ -36,7 +36,7 @@ class UserList {
     });
   };
   handleConversationUpdate = (id, name, users) => {
-    if (!this.activeConversation || this.activeConversation.id) {
+    if (!this.activeConversation || this.activeConversation.id != id) {
       return;
     }
     this.$userList.innerHTML = "";

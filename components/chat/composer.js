@@ -12,7 +12,7 @@ class Composer {
     this.$input.placeholder = "Type here..";
 
     this.$btnEmo.innerHTML = "👍";
-    //this.$btnEmo.type = "button";
+    this.$btnEmo.type = "button";
 
     this.$btnSend.innerHTML = "🛩";
     this.$btnSend.style.fontSize = "24px";
@@ -64,6 +64,7 @@ class Composer {
   };
 
   handleBtnSend = () => {
+    
     if (
       !this.$input.value ||
       !firebase.auth().currentUser.email ||

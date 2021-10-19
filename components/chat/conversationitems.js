@@ -5,37 +5,40 @@ class ConversationItem {
 
   $container = document.createElement("div");
   $txtName = document.createElement("span");
-  $NoOfUser = document.createElement("span");
+  $NoOfUser = document.createElement("small");
 
   constructor(id, name, users) {
-      this.id=id
-      this.name=name
-      this.users=users
+    this.id = id;
+    this.name = name;
+    this.users = users;
 
-      this.$txtName.innerHTML=name
-      this.$NoOfUser.innerHTML=" (" + users.length + ") online";
+    this.$txtName.innerHTML = name;
+    this.$NoOfUser.innerHTML = " (" + users.length + ") online";
 
-      this.$container.appendChild(this.$txtName)
-      this.$container.appendChild(this.$NoOfUser)
-
+    this.$container.appendChild(this.$txtName);
+    this.$container.appendChild(this.$NoOfUser);
   }
 
-  setOnclick=(listener)=>{
-    this.$container.onclick=()=>{
-        listener(this.id,this.name,this.users)
+  setOnclick = (listener) => {
+    this.$container.onclick = () => {
+      listener(this.id, this.name, this.users);
+    };
+  };
+
+  setHighLight = (isHighlighted) => {
+    if (isHighlighted) {
+      this.$container.style.background = "purple";
+      this.$container.style.color = "white";
+    } else {
+      this.$container.style.background = "white";
+      this.$container.style.color = "black";
     }
-  }
+  };
 
-  setHighLight=(isHighlighted)=>{
-      if(isHighlighted){
-          this.$container.style.background="purple"
-          this.$container.style.color="white"
-      }
-      else{
-          this.$container.style.background="white"
-          this.$container.style.color="black"
-      }
-  }
+  setUsers = (users) => {
+    this.users = users;
+    this.$NoOfUser.innerHTML = "(" + users.length + ")";
+  };
 }
 
-export{ConversationItem}
+export { ConversationItem };
