@@ -1,5 +1,5 @@
 class Composer {
-  activeConversation=null;
+  activeConversation = null;
 
   $container = document.createElement("div");
   $form = document.createElement("form");
@@ -25,7 +25,7 @@ class Composer {
 
     this.$btnEmo.addEventListener("click", this.handleBtnEmoClick);
 
-    this.$btnSend.addEventListener("click", this.handleBtnSend);
+    //this.$btnSend.addEventListener("click", this.handleBtnSend);
     this.$form.addEventListener("submit", this.handleSubmit);
   }
 
@@ -64,7 +64,6 @@ class Composer {
   };
 
   handleBtnSend = () => {
-    
     if (
       !this.$input.value ||
       !firebase.auth().currentUser.email ||
