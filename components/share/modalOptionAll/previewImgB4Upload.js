@@ -1,50 +1,50 @@
 class PreviewAva {
-
-
     $container =document.createElement("div");
 
-    $inputAva = document.createElement("input");
-    $avaPreviewBox = document.createElement("div");
-    $txtAvaPreview = document.createElement("span"); //image preview default
-    $avaPreviewImg = document.createElement("img");//image preview img
+    $btnChooseAva = document.createElement("input");
+    $chooseAva = document.createElement("img");
+    $btnUploadAva = document.createElement("button")
 
+    constructor(){
+        this.$btnChooseAva.type = "file";
+        this.$btnChooseAva.setAttribute('id', 'ava')
+        this.$chooseAva.setAttribute('id','chooseAva') //phải set cái id như vậy mới ad đc vào trong functuon
+        this.$btnUploadAva.innerHTML = "Upload"
 
-    constructor () {
-        this.$txtAvaPreview.innerHTML = "..."
+        this.$container.appendChild(this.$chooseAva);
+        this.$container.appendChild(this.$btnChooseAva);
+        this.$container.appendChild(this.$btnUploadAva);
+
+        // this.$btnUploadAva.onclick = function(){uploadImage()}
+        this.$btnUploadAva.addEventListener("click", this.uploadImage);
         
-        this.$container.appendChild(this.$avaPreviewBox);
-            this.$avaPreviewBox.classList("imagePreview")
-        this.$container.appendChild(this.$inputAva);
-            this.$inputAva.type = "file"
-        
-        this.$avaPreviewBox.appendChild(this.$avaPreviewImg);
-            this.$avaPreviewImg.classList("image-preview__image")
-            
-            this.$avaPreviewImg.alt = "Avata"
-        this.$avaPreviewBox.appendChild(this.$txtAvaPreview);
-            this.$txtAvaPreview.classList("image-preview__default-text")
-            
-        
-
-        this.$inputAva.addEventListener("change", function() {
-            const file = this.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-
-                // this.$txtAvaPreview.style.display = "none";
-                // this.$avaPreviewImg.style.display = "block";
-
-                reader.addEventListener("load", function() {
-                    // console.log(this);
-                   this.$avaPreviewImg.setAttribute("src", this.result); 
-                });
-
-                reader.readAsDataURL(file);
+        this.$btnChooseAva.addEventListener("change", function(event) {
+            if(event.target.files.length == 0){
+                return;
             }
-        })
-        
+            var tempUrl = URL.createObjectURL(event.target.files[0]);
+            chooseAva.setAttribute("src", tempUrl)
+            //đây chính là cía id đã đặt ở trên
+        });
+
+      
     }
+    uploadImage = () => {
+        const ref = firebase.storage().ref();
+        const file = document.querySelector('ava').files[0];
+        const metadata = {
+            contentType: file.type
+        };
+        const name = file.name;
+        const uploadIMG = ref.child(name).put(file, metadata);
+        uploadIMG
+            .then(snapshot => snapshot.ref.getDownloadURL())
+            .then(url => {
+                console.log(url)
+            }) 
+            .catch(console.error)   
+    }
+
 }
 
 export {PreviewAva}

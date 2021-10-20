@@ -53,6 +53,8 @@ class ModalOptions {
   setonCancelClick=(listener)=>{
     this.$btnCancel.onclick=listener
     this.$btnSave.onclick=listener
+
+    
 }
 }
 
