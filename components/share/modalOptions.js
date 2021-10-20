@@ -1,11 +1,11 @@
 import { ModalOptionsContent } from "./modalOptionAll/modalOptionContent.js";
-
+import { PreviewAva } from "./modalOptionAll/previewImgB4Upload.js";
 class ModalOptions {
   $container = document.createElement("div");
   $modalOptionsContainer = document.createElement("div");//background
   
   $header = document.createElement("div");
-  $imgAva = document.createElement("img");
+  $imgAva = new PreviewAva();
   
   $body = document.createElement("div");
 
@@ -35,7 +35,7 @@ class ModalOptions {
     this.$modalOptionsContainer.appendChild(this.$body);
     this.$modalOptionsContainer.appendChild(this.$footer);
 
-    this.$header.appendChild(this.$imgAva);
+    this.$header.appendChild(this.$imgAva.$container);
     
     this.$body.appendChild(this.$name.$container);
     this.$body.appendChild(this.$email.$container);
