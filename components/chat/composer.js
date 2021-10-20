@@ -16,16 +16,20 @@ class Composer {
     this.$btnEmo.type = "button";
 
     this.$btnSend.innerHTML = "🛩";
+    
+        this.$input.classList.add("input-chat");
+        this.$btnEmo.classList.add("button-emo");
+        this.$btnSend.classList.add("button-send");
+        
 
     this.$container.appendChild(this.$form);
 
-    this.$form.appendChild(this.$input);
-    this.$form.appendChild(this.$btnEmo);
-    this.$form.appendChild(this.$btnSend);
+    this.$form.appendChild(this.$container_composer)
+    this.$container_composer.classList.add("container-composer")
 
-    this.$input.classList.add("input-chat");
-    this.$btnEmo.classList.add("button-emo");
-    this.$btnSend.classList.add("button-send");
+    this.$container_composer.appendChild(this.$input);
+    this.$container_composer.appendChild(this.$btnEmo);
+    this.$container_composer.appendChild(this.$btnSend);
 
     this.$btnEmo.addEventListener("click", this.handleBtnEmoClick);
 
