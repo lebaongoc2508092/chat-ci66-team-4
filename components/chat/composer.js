@@ -61,6 +61,7 @@ class Composer {
       ConversationId: this.activeConversation.id,
       sentAt: firebase.firestore.FieldValue.serverTimestamp(), //add new
     });
+    this.$input.value=""
   };
 
   handleBtnSend = () => {
@@ -77,6 +78,7 @@ class Composer {
       ConversationId: this.activeConversation.id,
       sentAt: firebase.firestore.FieldValue.serverTimestamp(), //add new
     });
+    this.$input.value=""
   };
 }
 
