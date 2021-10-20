@@ -13,7 +13,7 @@
     font-size: 16px;
 }
 .inputLogin{
-    width: 40%;
+    width: 56%;
     padding: 10px 20px;
     outline: none;
     font-weight: 600;
@@ -22,7 +22,7 @@
     letter-spacing: 1px;
     color:#f9a825;
     background: transparent;
-    border-radius: 30px;
+    border-radius: 10px;
     font-family: "Inconsolata",sans-serif; 
 }
 

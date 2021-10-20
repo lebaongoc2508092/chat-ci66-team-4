@@ -19,24 +19,53 @@
     align-items: stretch;
   }
   
-  .modal-container > .header {
+  .modal-container > .header-modal {
     padding: 10px 20px;
     border-bottom: 1px solid #ececec;
     font-size: 24px;
-    font-family: "Open Sans";
+    color: aqua;
+    font-weight: bold;
+
   }
-  
-  .modal-container > .body {
+ 
+  .modal-container > .body-modal {
     padding: 10px 20px;
     border-bottom: 1px solid #ececec;
     font-family: "Roboto";
   }
+  label {
+    color: aqua;
+    margin-right: 16px;
+    font-size: 16px;
+    line-height: 16px;
+}
   
   .modal-container > .footer-modal {
     padding: 10px 20px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+  .btnConfirm {
+    background-color: aqua;
+    color: white;
+    font-size: 16px;
+    line-height: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+  }
+  .btnCancel {
+    background-color: #cccc;
+    color: black;
+    font-size: 16px;
+    line-height: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-right: 12px;
   }
   
   

@@ -10,14 +10,24 @@ class Modal {
 
   constructor() {
     this.$container.appendChild(this.$modalContainer);
+    this.$container.classList.add("modal-backdrop");
+    this.$header.classList.add("header-modal");
+    this.$body.classList.add("body-modal");
+    this.$footer.classList.add("footer-modal");
+
+
     this.$modalContainer.appendChild(this.$header);
     this.$modalContainer.appendChild(this.$body);
     this.$modalContainer.appendChild(this.$footer);
+    this.$modalContainer.classList.add("modal-container")
 
     this.$btnConfirm.innerHTML = "Đồng ý";
     this.$btnCancel.innerHTML = "Huỷ";
     this.$footer.appendChild(this.$btnCancel);
     this.$footer.appendChild(this.$btnConfirm);
+    this.$btnConfirm.classList.add("btnConfirm");
+    this.$btnCancel.classList.add("btnCancel");
+    
   }
 
   setHeader=(title)=>{
