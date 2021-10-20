@@ -1,0 +1,17 @@
+.container-profile {
+    background-color: #012554;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+
+}
+
+.container-conversation-list {
+    background-color: #012554;
+    color: white;
+    align-items: center;
+    border-top: 5px solid white;
+}

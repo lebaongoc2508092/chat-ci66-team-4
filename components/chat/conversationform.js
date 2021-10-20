@@ -1,15 +1,18 @@
 import { Modal } from "../share/modal.js";
 import { InputGroup } from "../share/inputGroup.js";
+import { inputImage } from "./image.js";
 
 class CreateConversationForm {
   $container = document.createElement("div");
   $modal = new Modal();
+  // inputImage = new inputImage();
 
   $form = document.createElement("form");
   $conversationNameInput = new InputGroup("Tạo mới", "text", "Nhập tên đoạn hội thoại");
 
   constructor() {
     this.$container.appendChild(this.$modal.$container);
+    // this.$container.appendChild(this.inputImage.$container);
     this.$container.style.visibility = "hidden";
 
     this.$modal.setHeader("Tạo đoạn hội thoại mới");

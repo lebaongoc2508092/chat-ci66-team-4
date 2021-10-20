@@ -17,6 +17,7 @@ class ConversationsList {
     );
     this.$container.appendChild(this.$btnCreatConversations);
     this.$container.appendChild(this.$createConversationForm.$container);
+    this.$container.classList.add("container-conversation-list")
   }
 
   setOnConversationItemClick = (listener) => {

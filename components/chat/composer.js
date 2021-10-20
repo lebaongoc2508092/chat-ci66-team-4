@@ -6,22 +6,26 @@ class Composer {
   $input = document.createElement("input");
   $btnEmo = document.createElement("button");
   $btnSend = document.createElement("button");
+  $container_composer = document.createElement("div");
 
   constructor() {
     this.$input.type = "text";
-    this.$input.placeholder = "Type here..";
+    this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé";
 
     this.$btnEmo.innerHTML = "👍";
     this.$btnEmo.type = "button";
 
     this.$btnSend.innerHTML = "🛩";
-    this.$btnSend.style.fontSize = "24px";
 
     this.$container.appendChild(this.$form);
 
     this.$form.appendChild(this.$input);
     this.$form.appendChild(this.$btnEmo);
     this.$form.appendChild(this.$btnSend);
+
+    this.$input.classList.add("input-chat");
+    this.$btnEmo.classList.add("button-emo");
+    this.$btnSend.classList.add("button-send");
 
     this.$btnEmo.addEventListener("click", this.handleBtnEmoClick);
 

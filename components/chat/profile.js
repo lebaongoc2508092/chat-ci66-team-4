@@ -6,13 +6,15 @@ class Profile {
   $avatar = document.createElement("div");
   $displayName = document.createElement("div");
   $options = new ModalOptions();
-  $optionsClick=document.createElement("button")
+  $optionsClick = document.createElement("button")
   $btnLogout = document.createElement("button");
 
   constructor() {
     this.$displayName.innerHTML = "Name";
 
     this.$optionsClick.innerHTML="Option"
+    
+    this.$container.classList.add("container-profile");
 
     this.$options.$container.style.visibility = "hidden";
    // this.$options.$container.innerHTML = "Option";

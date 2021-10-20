@@ -6,6 +6,7 @@ class MessageList {
   addMessage = (message) => {
     const item = new MessageItem (message.content, message.sender);
     this.$container.appendChild(item.$container);
+    this.$container.classList.add("container-message-list");
   };
   clearMessage = () => {
       this.$container.innerHTML = "";
