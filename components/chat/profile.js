@@ -3,13 +3,15 @@ import { ModalOptions } from "../share/modalOptions.js";
 class Profile {
   $container = document.createElement("div");
 
-  $avatar = document.createElement("div");
+  $avatar = document.createElement("img");
   $displayName = document.createElement("div");
   $options = new ModalOptions();
   $optionsClick = document.createElement("button")
   $btnLogout = document.createElement("button");
 
   constructor() {
+    this.setProfileAvatar();
+
     this.$displayName.innerHTML = "Name";
 
     this.$optionsClick.innerHTML="Option"
@@ -27,7 +29,6 @@ class Profile {
     this.$btnLogout.innerHTML = "Logout";
 
     this.$container.appendChild(this.$avatar);
-    this.$avatar.classList.add("avatar");
     this.$container.appendChild(this.$displayName);
     this.$container.appendChild(this.$options.$container);
     this.$container.appendChild(this.$optionsClick)
@@ -38,7 +39,6 @@ class Profile {
     this.$options.setonCancelClick(()=>{
         this.setVisible(false)
     })
-
 
     this.$avatar.classList.add("avatar");
     this.$displayName.classList.add("displayname");
@@ -52,6 +52,18 @@ class Profile {
   handleLogout = () => {
     firebase.auth().signOut();
   };
+
+  setProfileAvatar = () => {
+    const user = firebase.auth().currentUser;
+    if (user !== null) {
+      const displayName = user.displayName;
+      const email = user.email;
+      const photoURL = user.photoURL;
+      const emailVerified = user.emailVerified;
+      const uid = user.uid;
+      this.$avatar.src = photoURL;
+  }
+  }
 
   setVisible = (visible) => {
     if (visible) {

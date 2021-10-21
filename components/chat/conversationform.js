@@ -1,6 +1,6 @@
 import { Modal } from "../share/modal.js";
 import { InputGroup } from "../share/inputGroup.js";
-import { inputImage } from "./image.js";
+// import { inputImage } from "./image.js";
 
 class CreateConversationForm {
   $container = document.createElement("div");
