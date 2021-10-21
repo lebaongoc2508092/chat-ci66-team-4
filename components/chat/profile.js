@@ -27,6 +27,7 @@ class Profile {
     this.$btnLogout.innerHTML = "Logout";
 
     this.$container.appendChild(this.$avatar);
+    this.$avatar.classList.add("avatar");
     this.$container.appendChild(this.$displayName);
     this.$container.appendChild(this.$options.$container);
     this.$container.appendChild(this.$optionsClick)

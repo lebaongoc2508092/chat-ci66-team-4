@@ -1,17 +1,25 @@
 .container-profile {
-    background-color: #012554;
+    background-color: #96bef1;
     color: white;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    max-height: 300px;
 }
 
-.avatar {
 
+.avatar {
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    margin-top: 50px;
+    background-color: #fff;
 }
 
 .container-conversation-list {
-    background-color: #012554;
+    background-color: #96bef1;
     color: white;
     align-items: center;
     border-top: 5px solid white;
+    flex: 2;
 }
