@@ -158,7 +158,6 @@ class Register {
     setScreen(loginScreen.$container);
   };
 
-
   handleSubmit = (event) => {
     event.preventDefault();
     const email = this.$inputGroupEmail.getValue();
@@ -201,7 +200,22 @@ class Register {
           .currentUser.sendEmailVerification()
           .then(() => {
             alert("Hãy xác nhận trong e-mail !");
-            
+
+            const user = firebase.auth().currentUser;
+
+            user
+              .updateProfile({
+                displayName: this.$inputGroupDisplayName.getValue(),
+                
+              })
+              .then(() => {
+                // Update successful
+                // ...
+              })
+              .catch((error) => {
+                // An error occurred
+                // ...
+              });
           });
       });
   };
