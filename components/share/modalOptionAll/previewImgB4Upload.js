@@ -2,19 +2,24 @@ class PreviewAva {
     $container =document.createElement("div");
 
     $btnChooseAva = document.createElement("input");
+    $btnCUP = document.createElement("div")
     $chooseAva = document.createElement("img");
     $btnUploadAva = document.createElement("button")
+    $frameAva = document.createElement("div")
 
     constructor(){
         this.$btnChooseAva.type = "file";
-        this.$btnChooseAva.name="&ensp;"
         this.$btnChooseAva.setAttribute('id', 'ava')
         this.$chooseAva.setAttribute('id','chooseAva') //phải set cái id như vậy mới ad đc vào trong functuon
         this.$btnUploadAva.innerHTML = "Upload"
 
-        this.$container.appendChild(this.$chooseAva);
-        this.$container.appendChild(this.$btnChooseAva);
-        this.$container.appendChild(this.$btnUploadAva);
+        this.$container.appendChild(this.$frameAva);
+        this.$frameAva.classList.add("frameAva");
+        this.$frameAva.appendChild(this.$chooseAva);
+        this.$container.appendChild(this.$btnCUP)
+        this.$btnCUP.appendChild(this.$btnChooseAva);
+        this.$btnCUP.appendChild(this.$btnUploadAva);
+        
 
         // this.$btnUploadAva.onclick = function(){uploadImage()}
         this.$btnUploadAva.addEventListener("click", this.uploadImage);

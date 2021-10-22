@@ -10,7 +10,7 @@ class ModalOptions {
 
   $body = document.createElement("div");
 
-  $frameAva = document.createElement("div");
+  // $frameAva = document.createElement("div");
   $name = document.createElement("div")
   $email = document.createElement("div")
   $age = new ModalOptionsContent("Age", "", "");
@@ -27,8 +27,9 @@ class ModalOptions {
   constructor() {
     this.$container.classList.add("modalOptionsContainer")
     this.$modalOptionsContainer.classList.add("modalOptionsContainerBackground");
-    this.$frameAva.classList.add("frameAva");
-    this.$imgAva.$container.classList.add("imgAva")
+    // this.$frameAva.appendChild(this.$imgAva.$container)
+    // this.$frameAva.classList.add("frameAva");
+    // this.$imgAva.$container.classList.add("imgAva")
 
     this.$passwordChange.innerHTML = "Change Password";
     
@@ -41,8 +42,8 @@ class ModalOptions {
     this.$modalOptionsContainer.appendChild(this.$body);
     this.$modalOptionsContainer.appendChild(this.$footer);
     
-    this.$header.appendChild(this.$frameAva);
-    this.$frameAva.appendChild(this.$imgAva.$container);
+    this.$header.appendChild(this.$imgAva.$container);
+    // this.$frameAva.appendChild(this.$imgAva.$container);
 
     this.$body.appendChild(this.$name);
     this.$body.appendChild(this.$email);
