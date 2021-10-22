@@ -34,4 +34,7 @@
 }
 img#chooseAva {
     width: 500px;
+    max-height: 250px;
+    object-fit: cover;
+    object-position: 0% 60%;
 }
