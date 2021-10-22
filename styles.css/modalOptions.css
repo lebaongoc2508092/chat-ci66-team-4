@@ -1,0 +1,36 @@
+.modalOptionsContainer{
+    background-color: rgba(0, 0, 0, 0.93);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+.modalOptionsContainerBackground{
+    background: white;
+    height: 500px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.frameAva {
+    display: flex;
+
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border: 10px solid red;
+
+}
+
+.imgAva{
+    width: 40%;
+    display: flex;
+}

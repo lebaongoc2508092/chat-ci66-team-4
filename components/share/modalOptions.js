@@ -1,5 +1,6 @@
 import { ModalOptionsContent } from "./modalOptionAll/modalOptionContent.js";
 import { PreviewAva } from "./modalOptionAll/previewImgB4Upload.js";
+
 class ModalOptions {
   $container = document.createElement("div");
   $modalOptionsContainer = document.createElement("div"); //background
@@ -9,6 +10,7 @@ class ModalOptions {
 
   $body = document.createElement("div");
 
+  $frameAva = document.createElement("div");
   $name = document.createElement("div")
   $email = document.createElement("div")
   $age = new ModalOptionsContent("Age", "", "");
@@ -23,6 +25,11 @@ class ModalOptions {
   $btnSave = document.createElement("button");
 
   constructor() {
+    this.$container.classList.add("modalOptionsContainer")
+    this.$modalOptionsContainer.classList.add("modalOptionsContainerBackground");
+    this.$frameAva.classList.add("frameAva");
+    this.$imgAva.$container.classList.add("imgAva")
+
     this.$passwordChange.innerHTML = "Change Password";
     
     this.$btnCancel.innerHTML = "Cancel";
@@ -34,8 +41,9 @@ class ModalOptions {
     this.$modalOptionsContainer.appendChild(this.$body);
     this.$modalOptionsContainer.appendChild(this.$footer);
     
-    this.$header.appendChild(this.$imgAva.$container);
-    
+    this.$header.appendChild(this.$frameAva);
+    this.$frameAva.appendChild(this.$imgAva.$container);
+
     this.$body.appendChild(this.$name);
     this.$body.appendChild(this.$email);
     this.$body.appendChild(this.$age.$container);
