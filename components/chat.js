@@ -54,6 +54,7 @@ class Chat {
     this.$messageList.clearMessage();
     this.$userList.setActiveConversation(this.activeConversation);
     this.subscribeMessages();
+
     // console.log("GBYE")
   };
 
@@ -95,9 +96,9 @@ class Chat {
       .where("ConversationId", "==", this.activeConversation.id)
       .orderBy("sentAt") //add
       .onSnapshot((snapshot) => {
-       //console.log(this.activeConversation);
+        //console.log(this.activeConversation);
         snapshot.docChanges().forEach((change) => {
-         // console.log(change);
+          // console.log(change);
           if (change.type === "added")
             this.$messageList.addMessage(change.doc.data());
         });
