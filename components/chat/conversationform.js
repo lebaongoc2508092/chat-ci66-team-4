@@ -8,14 +8,16 @@ class CreateConversationForm {
   // inputImage = new inputImage();
 
   $form = document.createElement("form");
-  $conversationNameInput = new InputGroup("Tạo mới", "text", "Nhập tên đoạn hội thoại");
+  $conversationNameInput = new InputGroup("Tạo mới ", "text", "Nhập tên đoạn hội thoại");
 
   constructor() {
+    this.$conversationNameInput.$container.classList.add("conversationNameInput")
+
     this.$container.appendChild(this.$modal.$container);
     // this.$container.appendChild(this.inputImage.$container);
     this.$container.style.visibility = "hidden";
 
-    this.$modal.setHeader("Tạo đoạn hội thoại mới");
+
     this.$modal.setBody(this.$form);
     this.$modal.setonConfirmClick(this.handleCreateConversation);
     this.$modal.setonCancelClick(() => {

@@ -15,7 +15,8 @@ class Composer {
     this.$btnEmo.innerHTML = "👍";
     this.$btnEmo.type = "button";
 
-    this.$btnSend.innerHTML = "🛩";
+    // this.$btnSend.innerHTML = "🛩";
+    this.$btnSend.src = "./ph"
     
         this.$input.classList.add("input-chat");
         this.$btnEmo.classList.add("button-emo");

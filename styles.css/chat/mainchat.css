@@ -1,21 +1,21 @@
 .containerchat {
     max-width: 1400px;
-    margin: auto;
+    
     height: 100vh;
     display: flex; 
 }
 .containerleft {
-    flex: 1;
+    flex: 0.7;
     display: flex;
     flex-direction: column;
   
 }
 .containermiddle {
-    flex: 2;
-    background-color: #DAA520
+    flex: 1.7;
+    background-color: black;
 }
 .containerright {
-    flex: 0.8;
+    flex: 0.6;
 }
 
 .container-message-list {
@@ -28,8 +28,7 @@
 .button-emo{
     width: 40px;
     height: 40px;
-    background-color: #DAA520;
-    border-radius: 50%;
+    background-color: #DAA520;  
     
 }
 
@@ -37,8 +36,7 @@
     width: 40px;
     height: 40px;
     background-color: #DAA520;
-    border-radius: 50%;
-    border: 4px; 
+   
     font-size: 24px;
 }
 

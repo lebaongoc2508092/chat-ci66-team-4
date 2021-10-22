@@ -1,5 +1,5 @@
 .modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.93);
     position: fixed;
     left: 0;
     top: 0;
@@ -12,32 +12,40 @@
   }
   
   .modal-container {
-    background-color: white;
+    background: white;
+    height: 500px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
   }
   
+  .modal-container > .creatConversationGIfy {
+    width: 400px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
   .modal-container > .header-modal {
     padding: 10px 20px;
-    border-bottom: 1px solid #ececec;
+    margin-bottom: 1px;
     font-size: 24px;
-    color: aqua;
+    color:  #f9a825;
     font-weight: bold;
 
   }
  
   .modal-container > .body-modal {
     padding: 10px 20px;
-    border-bottom: 1px solid #ececec;
+    margin-bottom: 1px;
+    
     font-family: "Roboto";
   }
-  label {
-    color: aqua;
-    margin-right: 16px;
+.conversationNameInput {
+    color:  #f9a825;
+     
     font-size: 16px;
     line-height: 16px;
+
 }
   
   .modal-container > .footer-modal {
@@ -47,7 +55,7 @@
     align-items: center;
   }
   .btnConfirm {
-    background-color: aqua;
+    background-color:  #7c4dff;
     color: white;
     font-size: 16px;
     line-height: 16px;
@@ -57,8 +65,8 @@
     padding: 8px 10px;
   }
   .btnCancel {
-    background-color: #cccc;
-    color: black;
+    background-color:  #f9a825;
+    color: white;
     font-size: 16px;
     line-height: 16px;
     border: none;
