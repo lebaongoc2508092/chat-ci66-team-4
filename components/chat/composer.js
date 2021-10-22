@@ -7,6 +7,7 @@ class Composer {
   $btnEmo = document.createElement("button");
   $btnSend = document.createElement("button");
   $container_composer = document.createElement("div");
+  $i = document.createElement("i")
 
   constructor() {
     this.$input.type = "text";
@@ -14,9 +15,9 @@ class Composer {
 
     this.$btnEmo.innerHTML = "👍";
     this.$btnEmo.type = "button";
+    this.$i.setAttribute("class", "fas fa-paper-plane")
 
     // this.$btnSend.innerHTML = "🛩";
-    this.$btnSend.src = "./ph"
     
         this.$input.classList.add("input-chat");
         this.$btnEmo.classList.add("button-emo");
@@ -24,7 +25,7 @@ class Composer {
         
 
     this.$container.appendChild(this.$form);
-
+    
     this.$form.appendChild(this.$container_composer)
     this.$container_composer.classList.add("container-composer")
 
@@ -33,6 +34,7 @@ class Composer {
     this.$container_composer.appendChild(this.$btnSend);
 
     this.$btnEmo.addEventListener("click", this.handleBtnEmoClick);
+    this.$btnSend.appendChild(this.$i);
 
     //this.$btnSend.addEventListener("click", this.handleBtnSend);
     this.$form.addEventListener("submit", this.handleSubmit);

@@ -46,7 +46,7 @@ class PreviewAva {
                 user.updateProfile({
                     photoURL: imageUserProfile
                 }).then(() => {
-                    alert("Useor update profile avatar successfully");
+                    alert("User update profile avatar successfully");
                 }).catch(consle.error)  
             }) 
             .catch(console.error)   
