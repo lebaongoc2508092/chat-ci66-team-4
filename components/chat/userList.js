@@ -33,10 +33,16 @@ class UserList {
   handleLeave = () => {
     this.activeConversation;
     let change = null;
-    console.log(this.activeConversation);
+    const user = firebase.auth().currentUser;
+
+    // console.log(this.activeConversation); // ktra
+
+    let userArray = this.activeConversation.users
+    let indexOfUser = userArray.indexOf(user.email)
+    // console.log(user.email) // ktra
     if (confirm("Bạn có chắc muốn rời khỏi đoạn hội thoại?")) {
       
-      this.activeConversation.users.splice(0, 1);
+      this.activeConversation.users.splice(indexOfUser, 1);
       const newUserList = this.activeConversation.users;
       db.collection("conversations").doc(this.activeConversation.id).update({
         users: newUserList,
@@ -47,7 +53,7 @@ class UserList {
       return;
     }
     if (change != 0) {
-      
+      return
     }
   };
   setActiveConversation = (conversation) => {
