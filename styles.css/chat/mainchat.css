@@ -56,3 +56,10 @@
     border: none;
     border-radius: 20px;
 }
+
+input[type="button"] {
+    padding: 0 20px;
+    margin-right: 5px;
+    font-size: 24px;
+    background: yellow;
+}

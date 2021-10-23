@@ -4,12 +4,16 @@ class MessageList {
 
   constructor() {}
   addMessage = (message) => {
-    const item = new MessageItem (message.content, message.sender);
+    const item = new MessageItem(
+      message.content,
+      message.displayName,
+      message.avatar
+    );
     this.$container.appendChild(item.$container);
     this.$container.classList.add("container-message-list");
   };
   clearMessage = () => {
-      this.$container.innerHTML = "";
+    this.$container.innerHTML = "";
   };
 }
-export{MessageList};
+export { MessageList };

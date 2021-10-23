@@ -30,7 +30,7 @@ class PreviewAva {
             }
             var tempUrl = URL.createObjectURL(event.target.files[0]);
             chooseAva.setAttribute("src", tempUrl)
-            //đây chính là cía id đã đặt ở trên
+            //đây chính là cái id đã đặt ở trên
         });
     }
 

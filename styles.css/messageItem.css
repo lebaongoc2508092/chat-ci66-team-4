@@ -1,0 +1,21 @@
+.container-user {
+    display: flex;
+    align-items: center;
+}
+.img-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.txt-content{
+    margin-left: 50px;
+    background: whitesmoke;
+    color: black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px;
+    font-size: 18px;
+    line-height: 18px;
+}

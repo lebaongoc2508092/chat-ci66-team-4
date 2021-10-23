@@ -3,33 +3,38 @@ class Composer {
 
   $container = document.createElement("div");
   $form = document.createElement("form");
+
+  $container_composer = document.createElement("div");
   $input = document.createElement("input");
   $btnEmo = document.createElement("button");
   $btnSend = document.createElement("button");
-  $container_composer = document.createElement("div");
-  $i = document.createElement("i")
+  $i = document.createElement("i");
+  $selectFile = document.createElement("input");
 
   constructor() {
+    this.$selectFile.setAttribute("type", "file");
+
+
     this.$input.type = "text";
     this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé";
 
     this.$btnEmo.innerHTML = "👍";
     this.$btnEmo.type = "button";
-    this.$i.setAttribute("class", "fas fa-paper-plane")
+    this.$i.setAttribute("class", "fas fa-paper-plane");
 
     // this.$btnSend.innerHTML = "🛩";
-    
-        this.$input.classList.add("input-chat");
-        this.$btnEmo.classList.add("button-emo");
-        this.$btnSend.classList.add("button-send");
-        
+
+    this.$input.classList.add("input-chat");
+    this.$btnEmo.classList.add("button-emo");
+    this.$btnSend.classList.add("button-send");
 
     this.$container.appendChild(this.$form);
-    
-    this.$form.appendChild(this.$container_composer)
-    this.$container_composer.classList.add("container-composer")
+    this.$container_composer.classList.add("container-composer");
+
+    this.$form.appendChild(this.$container_composer);
 
     this.$container_composer.appendChild(this.$input);
+    this.$container_composer.appendChild(this.$selectFile);
     this.$container_composer.appendChild(this.$btnEmo);
     this.$container_composer.appendChild(this.$btnSend);
 
@@ -52,6 +57,8 @@ class Composer {
     db.collection("messages").add({
       content: this.$btnEmo.innerHTML,
       sender: firebase.auth().currentUser.email,
+      displayName:firebase.auth().currentUser.displayName,
+      avatar:firebase.auth().currentUser.photoURL,
       ConversationId: this.activeConversation.id,
       sentAt: firebase.firestore.FieldValue.serverTimestamp(), //add new
     });
@@ -69,10 +76,12 @@ class Composer {
     db.collection("messages").add({
       content: this.$input.value,
       sender: firebase.auth().currentUser.email,
+      displayName:firebase.auth().currentUser.displayName,
+      avatar:firebase.auth().currentUser.photoURL,
       ConversationId: this.activeConversation.id,
       sentAt: firebase.firestore.FieldValue.serverTimestamp(), //add new
     });
-    this.$input.value=""
+    this.$input.value = "";
   };
 
   handleBtnSend = () => {
@@ -86,11 +95,15 @@ class Composer {
     db.collection("messages").add({
       content: this.$input.value,
       sender: firebase.auth().currentUser.email,
+      displayName:firebase.auth().currentUser.displayName,
+      avatar:firebase.auth().currentUser.photoURL,
       ConversationId: this.activeConversation.id,
       sentAt: firebase.firestore.FieldValue.serverTimestamp(), //add new
     });
-    this.$input.value=""
+    this.$input.value = "";
   };
+
+ 
 }
 
 export { Composer };
