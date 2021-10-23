@@ -30,32 +30,26 @@ class UserList {
       users: newUserList,
     });
   };
+
   handleLeave = () => {
     this.activeConversation;
-    let change = null;
     const user = firebase.auth().currentUser;
-
     // console.log(this.activeConversation); // ktra
-
-    let userArray = this.activeConversation.users
-    let indexOfUser = userArray.indexOf(user.email)
+    let userArray = this.activeConversation.users;
+    let indexOfUser = userArray.indexOf(user.email);
     // console.log(user.email) // ktra
     if (confirm("Bạn có chắc muốn rời khỏi đoạn hội thoại?")) {
-      
       this.activeConversation.users.splice(indexOfUser, 1);
       const newUserList = this.activeConversation.users;
       db.collection("conversations").doc(this.activeConversation.id).update({
         users: newUserList,
       });
-
-      change += 1;
     } else {
       return;
     }
-    if (change != 0) {
-      return
-    }
   };
+ 
+
   setActiveConversation = (conversation) => {
     this.activeConversation = conversation;
     this.$userList.innerHTML = "";
