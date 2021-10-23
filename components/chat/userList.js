@@ -44,6 +44,11 @@ class UserList {
       db.collection("conversations").doc(this.activeConversation.id).update({
         users: newUserList,
       });
+
+      setTimeout(function(){
+        window.location.reload(1);
+     }, 1600);
+
     } else {
       return;
     }
