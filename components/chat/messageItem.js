@@ -13,11 +13,12 @@ class MessageItem {
     this.$txtContent.innerText = content;
     this.$txtDisplayName.innerText = displayName;
     this.$imgAvatar.src = avatar;
-    this.$btnRemoveContent.innerHTML = "Del";
+    this.$btnRemoveContent.innerHTML = "Xóa";
 
     this.$imgAvatar.classList.add("img-avatar");
     this.$containerUser.classList.add("container-user");
     this.$txtContent.classList.add("txt-content");
+    this.$btnRemoveContent.classList.add("btn-Remove")
 
     this.$container.appendChild(this.$containerUser);
     this.$container.appendChild(this.$containerContent);
@@ -30,8 +31,6 @@ class MessageItem {
     this.$btnRemoveContent.addEventListener("click", this.handleDelMessage);
   }
   handleDelMessage = () => {
-
-    
 
     console.log("đã xoá");
     db.collection("messages")

@@ -59,7 +59,7 @@ class Login {
     //body
     this.$txtTitleH1.innerHTML = "Trò chuyện thật thuận tiện";
     this.$txtSlogan.innerHTML =
-      "Nhắn tin đi, nhắn tin nhiều vào hỡi thần dân của ta !!!!!";
+      "Nhắn tin đi, nhắn tin nhiều vào hỡi thần dân của ta !!!";
     this.$btnLogin.innerHTML = "Đăng Nhập";
     this.$btnGotoRegister.innerHTML = "Đăng ký";
 

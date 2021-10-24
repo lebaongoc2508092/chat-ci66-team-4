@@ -10,12 +10,20 @@
 }
 
 .txt-content{
-    margin-left: 50px;
-    background: whitesmoke;
-    color: black;
-    border-radius: 5px;
-    display: inline-block;
-    padding: 5px;
-    font-size: 18px;
-    line-height: 18px;
+  margin-left: 50px;
+  background: whitesmoke;
+  color: black;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+  font-size: 18px;
+  line-height: 18px;
 }
+
+.btn-Remove {
+  border-radius: 4px;
+  background-color: none;
+  margin-left: 10px;
+}
+
+
