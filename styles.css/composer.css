@@ -1,0 +1,19 @@
+.labelSelectFile{
+    margin-top: 8px;
+    background: white;
+    color: #7c4dff;
+    border: 1px solid #7c4dff;
+    height: 35px;
+    width: 130px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 1000;
+    cursor: pointer;
+}
+
+
+input[type="file"] {
+    display: none;
+}
