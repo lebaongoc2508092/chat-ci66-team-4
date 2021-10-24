@@ -15,7 +15,7 @@ class ModalOptions {
   $email = document.createElement("div")
   $birthdate = document.createElement("div")
   $country = document.createElement("div")
-  $telephone = document.createElement("div")
+  $phoneNumber = document.createElement("div")
 
   $passwordChange = document.createElement("a");
 
@@ -45,7 +45,7 @@ class ModalOptions {
     this.$body.appendChild(this.$email);
     this.$body.appendChild(this.$birthdate);
     this.$body.appendChild(this.$country);
-    this.$body.appendChild(this.$telephone);
+    this.$body.appendChild(this.$phoneNumber);
     this.$body.appendChild(this.$passwordChange);
     this.$body.classList.add("bodyModalOptions");
     this.$passwordChange.classList.add("btnChangePassword");
@@ -66,7 +66,7 @@ class ModalOptions {
       const email = user.email;
       const birthdate = user.birthdate;
       const country = user.country;
-      const telephone = user.telephone;
+      const phoneNumber = user.phoneNumber;
     
       const photoURL = user.photoURL;
       const emailVerified = user.emailVerified;
@@ -75,11 +75,11 @@ class ModalOptions {
       // this value to authenticate with your backend server, if
       // you have one. Use User.getToken() instead.
       const uid = user.uid;
-      this.$name.innerHTML="Name:" + displayName;
-      this.$email.innerHTML="Email:" + email;
-      this.$birthdate.innerHTML="Birthdate:" + birthdate;
-      this.$country.innerHTML="Country:" + country;
-      this.$telephone.innerHTML="Tel:" + telephone;
+      this.$name.innerHTML="Tên: " + displayName;
+      this.$email.innerHTML="Email: " + email;
+      this.$birthdate.innerHTML="Ngày sinh: " + birthdate;
+      this.$country.innerHTML="Quốc tịch: " + country;
+      this.$phoneNumber.innerHTML="SĐT: " + phoneNumber;
     }
 
   };

@@ -4,16 +4,18 @@ class Profile {
   $container = document.createElement("div");
 
   $avatar = document.createElement("img");
- 
+  
   $displayName = document.createElement("div");
+  $birthdate = document.createElement("div");
+  $country = document.createElement("div");
+  $phoneNumber = document.createElement("div");
+
   $options = new ModalOptions();
   $optionsClick = document.createElement("button");
   $btnLogout = document.createElement("button");
 
   constructor() {
     this.setProfileAvatar();
-
-
     this.$optionsClick.innerHTML = "Option";
 
     this.$container.classList.add("container-profile");
@@ -28,6 +30,10 @@ class Profile {
     this.$container.appendChild(this.$avatar);
 
     this.$container.appendChild(this.$displayName);
+    this.$container.appendChild(this.$birthdate);
+    this.$container.appendChild(this.$country);
+    this.$container.appendChild(this.$phoneNumber);
+
     this.$container.appendChild(this.$options.$container);
     this.$container.appendChild(this.$optionsClick);
     this.$container.appendChild(this.$btnLogout);
@@ -56,12 +62,19 @@ class Profile {
     const user = firebase.auth().currentUser;
     if (user !== null) {
       const displayName = user.displayName;
+      const birthdate = user.birthdate;
+      const country = user.country;
+      const phoneNumber = user.phoneNumber;
+
       const email = user.email;
       const photoURL = user.photoURL;
       const emailVerified = user.emailVerified;
       const uid = user.uid;
       this.$avatar.src = photoURL;
       this.$displayName.innerHTML = displayName;
+      this.$birthdate.innerHTML = "Ngày sinh: " + birthdate;
+      this.$country.innerHTML ="Quốc tịch: " +  country;
+      this.$phoneNumber.innerHTML ="SĐT: " +  phoneNumber;
     }
   };
 

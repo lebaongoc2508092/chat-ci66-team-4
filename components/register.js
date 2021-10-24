@@ -32,7 +32,7 @@ class Register {
   $inputGroupDisplayName = new InputGroup("", "text", "Nhập tên đăng ký");
   $inputGroupBirthDate = new InputGroup("", "date", "Nhập ngày tháng năm sinh");
   $inputGroupCountry = new InputGroup("", "text", "Bạn đến từ đâu");
-  $inputGroupTelephone = new InputGroup("", "tel", "Nhập số điện thoại")
+  $inputGroupphoneNumber = new InputGroup("", "tel", "Nhập số điện thoại")
 
   $inputGroupPassword = new InputGroup(
     "",
@@ -128,7 +128,7 @@ class Register {
     this.$form.appendChild(this.$inputGroupDisplayName.$container);
     this.$form.appendChild(this.$inputGroupBirthDate.$container);
     this.$form.appendChild(this.$inputGroupCountry.$container);
-    this.$form.appendChild(this.$inputGroupTelephone.$container);
+    this.$form.appendChild(this.$inputGroupphoneNumber.$container);
     this.$form.appendChild(this.$inputGroupPassword.$container);
     this.$form.appendChild(this.$inputGroupConfirmPassword.$container);
     this.$form.appendChild(this.$btnRegister);
@@ -138,7 +138,7 @@ class Register {
     this.$inputGroupDisplayName.$container.classList.add("inputBox");
     this.$inputGroupBirthDate.$container.classList.add("inputBox");
     this.$inputGroupCountry.$container.classList.add("inputBox");
-    this.$inputGroupTelephone.$container.classList.add("inputBox");
+    this.$inputGroupphoneNumber.$container.classList.add("inputBox");
     this.$inputGroupPassword.$container.classList.add("inputBox");
     this.$inputGroupConfirmPassword.$container.classList.add("inputBox");
 
@@ -202,13 +202,13 @@ class Register {
       this.$inputGroupCountry.setErrorMessage("");
     }
   
-    const telephone = this.$inputGroupTelephone.getValue();
-    if (!telephone) {
-      this.$inputGroupTelephone.setErrorMessage(
-        "Please enter your telephone number"
+    const phoneNumber = this.$inputGroupphoneNumber.getValue();
+    if (!phoneNumber) {
+      this.$inputGroupphoneNumber.setErrorMessage(
+        "Please enter your phoneNumber number"
         );
     } else {
-      this.$inputGroupTelephone.setErrorMessage("");
+      this.$inputGroupphoneNumber.setErrorMessage("");
     }
   
     const password = this.$inputGroupPassword.getValue();
@@ -246,11 +246,13 @@ class Register {
                 displayName: this.$inputGroupDisplayName.getValue(),
                 birthdate: this.$inputGroupBirthDate.getValue(),
                 country: this.$inputGroupCountry.getValue(),
-                telephone: this.$inputGroupTelephone.getValue(),
+                phoneNumber: this.$inputGroupphoneNumber.getValue(),
               })
               .then(() => {
                 // Update successful
                 // ...
+                console.log(user)
+                console.log(user.phoneNumber)
               })
               .catch((error) => {
                 // An error occurred
