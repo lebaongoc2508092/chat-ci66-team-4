@@ -4,7 +4,7 @@ class Profile {
   $container = document.createElement("div");
 
   $avatar = document.createElement("img");
-  
+
   $displayName = document.createElement("div");
   $birthdate = document.createElement("div");
   $country = document.createElement("div");
@@ -73,8 +73,8 @@ class Profile {
       this.$avatar.src = photoURL;
       this.$displayName.innerHTML = displayName;
       this.$birthdate.innerHTML = "Ngày sinh: " + birthdate;
-      this.$country.innerHTML ="Quốc tịch: " +  country;
-      this.$phoneNumber.innerHTML ="SĐT: " +  phoneNumber;
+      this.$country.innerHTML = "Quốc tịch: " + country;
+      this.$phoneNumber.innerHTML = "SĐT: " + phoneNumber;
     }
   };
 

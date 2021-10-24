@@ -32,7 +32,7 @@ class Register {
   $inputGroupDisplayName = new InputGroup("", "text", "Nhập tên đăng ký");
   $inputGroupBirthDate = new InputGroup("", "date", "Nhập ngày tháng năm sinh");
   $inputGroupCountry = new InputGroup("", "text", "Bạn đến từ đâu");
-  $inputGroupphoneNumber = new InputGroup("", "tel", "Nhập số điện thoại")
+  $inputGroupphoneNumber = new InputGroup("", "number", "Nhập số điện thoại");
 
   $inputGroupPassword = new InputGroup(
     "",
@@ -174,7 +174,7 @@ class Register {
     } else {
       this.$inputGroupEmail.setErrorMessage("");
     }
-    
+
     const displayName = this.$inputGroupDisplayName.getValue();
     if (!displayName) {
       this.$inputGroupDisplayName.setErrorMessage(
@@ -183,34 +183,33 @@ class Register {
     } else {
       this.$inputGroupDisplayName.setErrorMessage("");
     }
-    
+
     const birthdate = this.$inputGroupBirthDate.getValue();
     if (!birthdate) {
-      this.$inputGroupBirthDate.setErrorMessage(
-        "Please enter your birthdate"
-        );
+      this.$inputGroupBirthDate.setErrorMessage("Please enter your birthdate");
     } else {
       this.$inputGroupBirthDate.setErrorMessage("");
     }
-  
+
     const country = this.$inputGroupCountry.getValue();
     if (!country) {
       this.$inputGroupCountry.setErrorMessage(
         "Please enter your country's name"
-        );
+      );
     } else {
       this.$inputGroupCountry.setErrorMessage("");
     }
-  
+
     const phoneNumber = this.$inputGroupphoneNumber.getValue();
+    console.log(phoneNumber)
     if (!phoneNumber) {
       this.$inputGroupphoneNumber.setErrorMessage(
         "Please enter your phoneNumber number"
-        );
+      );
     } else {
       this.$inputGroupphoneNumber.setErrorMessage("");
     }
-  
+
     const password = this.$inputGroupPassword.getValue();
     if (password.length < 8) {
       this.$inputGroupPassword.setErrorMessage(
@@ -219,7 +218,7 @@ class Register {
     } else {
       this.$inputGroupPassword.setErrorMessage("");
     }
-    
+
     const passwordConfirm = this.$inputGroupConfirmPassword.getValue();
     if (passwordConfirm == password) {
       this.$inputGroupConfirmPassword.setErrorMessage("");
@@ -238,21 +237,17 @@ class Register {
           .currentUser.sendEmailVerification()
           .then(() => {
             alert("Hãy xác nhận trong e-mail !");
-
             const user = firebase.auth().currentUser;
-
             user
               .updateProfile({
                 displayName: this.$inputGroupDisplayName.getValue(),
+                phoneNumber: this.$inputGroupphoneNumber.getValue(),
                 birthdate: this.$inputGroupBirthDate.getValue(),
                 country: this.$inputGroupCountry.getValue(),
-                phoneNumber: this.$inputGroupphoneNumber.getValue(),
               })
               .then(() => {
                 // Update successful
                 // ...
-                console.log(user)
-                console.log(user.phoneNumber)
               })
               .catch((error) => {
                 // An error occurred
