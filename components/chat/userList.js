@@ -29,6 +29,10 @@ class UserList {
     db.collection("conversations").doc(this.activeConversation.id).update({
       users: newUserList,
     });
+    this.$input.innerHTML=""
+    setTimeout(function(){
+      window.location.reload(1);
+   }, 1600);
   };
 
   handleLeave = () => {
