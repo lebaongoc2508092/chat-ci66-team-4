@@ -1,6 +1,8 @@
 .container-user {
     display: flex;
     align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 .img-avatar {
   width: 40px;

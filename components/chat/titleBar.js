@@ -5,6 +5,7 @@ class TitleBar {
   $txtName = document.createElement("span");
 
   constructor() {
+    this.$container.setAttribute("class", "title")
     this.$txtName.innerHTML = "Vui lòng chọn 1 đoạn hội thoại ...";
     this.$container.appendChild(this.$txtName);
   }

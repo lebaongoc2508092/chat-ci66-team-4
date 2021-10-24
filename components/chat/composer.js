@@ -33,13 +33,13 @@ class Composer {
     this.$container.appendChild(this.$form);
     this.$container_composer.classList.add("container-composer");
 
-    this.$container_composer.appendChild(this.$label);
     this.$label.classList.add("labelSelectFile")
-
-
+    
+    
     this.$form.appendChild(this.$container_composer);
-
+    
     this.$container_composer.appendChild(this.$input);
+    this.$container_composer.appendChild(this.$label);
     this.$label.appendChild(this.$selectFile);
     this.$container_composer.appendChild(this.$btnEmo);
     this.$container_composer.appendChild(this.$btnSend);

@@ -13,6 +13,7 @@
 .containermiddle {
     flex: 1.7;
     background-color: black;
+    border: 1px solid #fbc02d;
 }
 .containerright {
     flex: 0.6;
@@ -25,20 +26,36 @@
 }
 
 
-.button-emo{
+.button-emo {
     width: 40px;
     height: 40px;
-    background-color: #DAA520;  
-    
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: transparent;
+    font-size: 24px;
+    border: none;
+}
+.button-emo:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    font-size: 28px;
 }
 
 .button-send {
     width: 40px;
     height: 40px;
-    background-color: #DAA520;
-   
-    font-size: 24px;
+    color:#DAA520;
+    border: none;
+    background-color: transparent;
+     border-radius:26%;
+    font-size: 26px;
+    font-weight: bold;
 }
+.button-send:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
 
 .container-composer{
     background: rgb(255, 255, 255);
@@ -62,4 +79,17 @@ input[type="button"] {
     margin-right: 5px;
     font-size: 24px;
     background: yellow;
+}
+
+span {
+    display: inline-block;
+    color: #fbc02d;
+    font-size: 24px;
+    font-weight: bold;
+}
+.title {
+    background-color: white;
+    display: flex;
+    border: 1px solid #fbc02d;
+    padding: 15px;
 }
