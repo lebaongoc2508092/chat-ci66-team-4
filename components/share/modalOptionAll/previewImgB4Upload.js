@@ -1,6 +1,7 @@
 class PreviewAva {
     $container =document.createElement("div");
 
+    $labelBtnChooseAva = document.createElement("label")
     $btnChooseAva = document.createElement("input");
     $btnCUP = document.createElement("div")
     $chooseAva = document.createElement("img");
@@ -12,12 +13,18 @@ class PreviewAva {
         this.$btnChooseAva.setAttribute('id', 'ava')
         this.$chooseAva.setAttribute('id','chooseAva') //phải set cái id như vậy mới ad đc vào trong functuon
         this.$btnUploadAva.innerHTML = "Upload"
+        this.$btnUploadAva.classList.add("btnUploadAva")
+        this.$btnCUP.classList = "btnCUP"
+        this.$labelBtnChooseAva.innerHTML = "Change your Ava"
+        this.$labelBtnChooseAva.classList.add("labelBtnChooseAva")
 
         this.$container.appendChild(this.$frameAva);
         this.$frameAva.classList.add("frameAva");
+        this.$chooseAva.src = "https://i.pinimg.com/originals/c3/28/7b/c3287b338bcfbedc6bf0382a634f2334.gif"
         this.$frameAva.appendChild(this.$chooseAva);
         this.$container.appendChild(this.$btnCUP)
-        this.$btnCUP.appendChild(this.$btnChooseAva);
+        this.$btnCUP.appendChild(this.$labelBtnChooseAva);
+        this.$labelBtnChooseAva.appendChild(this.$btnChooseAva);
         this.$btnCUP.appendChild(this.$btnUploadAva);
         
 

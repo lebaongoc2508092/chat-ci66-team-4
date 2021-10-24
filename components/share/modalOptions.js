@@ -1,4 +1,4 @@
-import { ModalOptionsContent } from "./modalOptionAll/modalOptionContent.js";
+
 import { PreviewAva } from "./modalOptionAll/previewImgB4Upload.js";
 
 class ModalOptions {
@@ -13,12 +13,11 @@ class ModalOptions {
   // $frameAva = document.createElement("div");
   $name = document.createElement("div")
   $email = document.createElement("div")
-  $age = new ModalOptionsContent("Age", "", "");
-  $birthdate = new ModalOptionsContent("Birthdate", "", "");
-  $country = new ModalOptionsContent("Country", "", "");
-  $phone = new ModalOptionsContent("Tel", "", "");
+  $birthdate = document.createElement("div")
+  $country = document.createElement("div")
+  $telephone = document.createElement("div")
 
-  $passwordChange = document.createElement("button");
+  $passwordChange = document.createElement("a");
 
   $footer = document.createElement("div");
   $btnCancel = document.createElement("button");
@@ -27,9 +26,6 @@ class ModalOptions {
   constructor() {
     this.$container.classList.add("modalOptionsContainer")
     this.$modalOptionsContainer.classList.add("modalOptionsContainerBackground");
-    // this.$frameAva.appendChild(this.$imgAva.$container)
-    // this.$frameAva.classList.add("frameAva");
-    // this.$imgAva.$container.classList.add("imgAva")
 
     this.$passwordChange.innerHTML = "Change Password";
     
@@ -47,14 +43,18 @@ class ModalOptions {
 
     this.$body.appendChild(this.$name);
     this.$body.appendChild(this.$email);
-    this.$body.appendChild(this.$age.$container);
-    this.$body.appendChild(this.$birthdate.$container);
-    this.$body.appendChild(this.$country.$container);
-    this.$body.appendChild(this.$phone.$container);
+    this.$body.appendChild(this.$birthdate);
+    this.$body.appendChild(this.$country);
+    this.$body.appendChild(this.$telephone);
     this.$body.appendChild(this.$passwordChange);
+    this.$body.classList.add("bodyModalOptions");
+    this.$passwordChange.classList.add("btnChangePassword");
     
     this.$footer.appendChild(this.$btnCancel);
     this.$footer.appendChild(this.$btnSave);
+    this.$footer.classList.add("footerModalOptions")
+    this.$btnCancel.classList.add("btnCancelModalOptions");
+    this.$btnSave.classList.add("btnSaveModalOptions");
     this.handleRenderProfile()
   }
   
@@ -63,8 +63,10 @@ class ModalOptions {
     if (user !== null) {
       // The user object has basic properties such as display name, email, etc.
       const displayName = user.displayName;
-  
       const email = user.email;
+      const birthdate = user.birthdate;
+      const country = user.country;
+      const telephone = user.telephone;
     
       const photoURL = user.photoURL;
       const emailVerified = user.emailVerified;
@@ -73,8 +75,11 @@ class ModalOptions {
       // this value to authenticate with your backend server, if
       // you have one. Use User.getToken() instead.
       const uid = user.uid;
-      this.$email.innerHTML=email;
-      this.$name.innerHTML=displayName;
+      this.$name.innerHTML="Name:" + displayName;
+      this.$email.innerHTML="Email:" + email;
+      this.$birthdate.innerHTML="Birthdate:" + birthdate;
+      this.$country.innerHTML="Country:" + country;
+      this.$telephone.innerHTML="Tel:" + telephone;
     }
 
   };

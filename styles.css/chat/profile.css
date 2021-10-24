@@ -9,12 +9,15 @@
 
 
 .avatar {
-    width: 150px;px;
-    height:150px;
+    width: 110px;
+    height:110px;
     border-radius:50%;
     margin-top: 10px;
     background-color: #fff;
+    object-fit: cover;
+    
 }
+
 
 .container-conversation-list {
     background-color: #96bef1;

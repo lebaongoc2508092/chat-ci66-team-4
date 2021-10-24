@@ -4,6 +4,7 @@ class Profile {
   $container = document.createElement("div");
 
   $avatar = document.createElement("img");
+ 
   $displayName = document.createElement("div");
   $options = new ModalOptions();
   $optionsClick = document.createElement("button");
@@ -25,6 +26,7 @@ class Profile {
     this.$btnLogout.innerHTML = "Logout";
 
     this.$container.appendChild(this.$avatar);
+
     this.$container.appendChild(this.$displayName);
     this.$container.appendChild(this.$options.$container);
     this.$container.appendChild(this.$optionsClick);
