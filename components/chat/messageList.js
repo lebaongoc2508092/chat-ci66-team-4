@@ -9,7 +9,7 @@ class MessageList {
       message.displayName,
       message.avatar
     );
-    this.$container.appendChild(item.$container);
+    this.$container.prepend(item.$container);
     this.$container.classList.add("container-message-list");
   };
   clearMessage = () => {

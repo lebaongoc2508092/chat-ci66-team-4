@@ -24,23 +24,25 @@ class Composer {
     this.$btnEmo.type = "button";
     this.$i.setAttribute("class", "fas fa-paper-plane");
 
-    // this.$btnSend.innerHTML = "🛩";
 
     this.$input.classList.add("input-chat");
     this.$btnEmo.classList.add("button-emo");
     this.$btnSend.classList.add("button-send");
+    this.$container.classList.add("footer-container");
 
     this.$container.appendChild(this.$form);
     this.$container_composer.classList.add("container-composer");
 
-    this.$label.classList.add("labelSelectFile")
     
     
     this.$form.appendChild(this.$container_composer);
     
     this.$container_composer.appendChild(this.$input);
+
     this.$container_composer.appendChild(this.$label);
     this.$label.appendChild(this.$selectFile);
+    this.$label.classList.add("labelSelectFile");
+
     this.$container_composer.appendChild(this.$btnEmo);
     this.$container_composer.appendChild(this.$btnSend);
 

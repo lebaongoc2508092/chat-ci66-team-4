@@ -14,10 +14,9 @@ class Chat {
   $containerMiddle = document.createElement("div");
   $containerRight = document.createElement("div");
   $profile = new Profile();
-  //$options = new ModalOptions();
   $titleBar = new TitleBar();
-  $composer = new Composer();
   $messageList = new MessageList();
+  $composer = new Composer();
   $userList = new UserList();
 
   $conversationList = new ConversationsList();
@@ -39,10 +38,10 @@ class Chat {
 
     this.$containerMiddle.appendChild(this.$titleBar.$container);
     this.$containerMiddle.appendChild(this.$messageList.$container);
-      this.$containerMiddle.appendChild(this.$composer.$container)
+    this.$containerMiddle.appendChild(this.$composer.$container);
+
     this.$containerRight.appendChild(this.$userList.$container);
 
-    this.$containerMiddle.appendChild(this.$composer.$container);
     this.subscribeConversation();
   }
 
@@ -55,7 +54,6 @@ class Chat {
     this.$userList.setActiveConversation(this.activeConversation);
     this.subscribeMessages();
 
-    // console.log("GBYE")
   };
 
   subscribeConversation = () => {

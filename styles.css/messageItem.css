@@ -1,3 +1,7 @@
+.container-messages {
+  /* display: flex; */
+  /* justify-content: flex-end; */
+}
 .container-user {
     display: flex;
     align-items: center;
@@ -20,6 +24,7 @@
   padding: 5px;
   font-size: 18px;
   line-height: 18px;
+  margin-bottom: 16px;
 }
 
 .btn-Remove {

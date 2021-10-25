@@ -15,6 +15,7 @@ class MessageItem {
     this.$imgAvatar.src = avatar;
     this.$btnRemoveContent.innerHTML = "Xóa";
 
+    this.$container.classList.add("container-messages")
     this.$imgAvatar.classList.add("img-avatar");
     this.$containerUser.classList.add("container-user");
     this.$txtContent.classList.add("txt-content");
