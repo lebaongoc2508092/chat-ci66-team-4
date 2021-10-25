@@ -8,12 +8,14 @@ class MessageItem {
   $containerContent = document.createElement("div");
   $txtContent = document.createElement("div");
   $btnRemoveContent = document.createElement("button");
+  $i = document.createElement("i")
 
   constructor(content, displayName, avatar,sender) {
     this.$txtContent.innerText = content;
     this.$txtDisplayName.innerText = displayName;
     this.$imgAvatar.src = avatar;
-    this.$btnRemoveContent.innerHTML = "Xóa";
+    this.$i.setAttribute("class","far fa-trash-alt")
+    this.$btnRemoveContent.appendChild(this.$i)
 
     this.$container.classList.add("container-messages")
     this.$imgAvatar.classList.add("img-avatar");
@@ -35,8 +37,10 @@ class MessageItem {
       this.$container.classList.add("my-container-messages")
       this.$containerUser.classList.add("my-container-user")
       this.$containerContent.classList.add("my-txt-content")
-      this.$imgAvatar.style.visibility="hidden"
-      this.$txtDisplayName.style.visibility="hidden"
+      this.$imgAvatar.style.display = "none"
+      this.$txtDisplayName.style.display = "none"
+      this.$containerContent.appendChild(this.$btnRemoveContent);
+      this.$containerContent.appendChild(this.$txtContent);
     }
   }
   handleDelMessage = () => {

@@ -17,7 +17,7 @@
   margin-right: 12px;
 }
 
-.txt-content{
+.txt-content {
   margin-left: 50px;
   background: whitesmoke;
   color: black;
@@ -32,7 +32,20 @@
 .btn-Remove {
   border-radius: 4px;
   background-color: none;
-  /* margin-left: 10px; */
+  color: white;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  margin-right: -34px;
+  margin-bottom: 13px;
+  display: none;
+
+}
+.my-txt-content:hover .btn-Remove {
+  display: block;
+  cursor: pointer;
+  opacity: 1;
 }
 
 .my-container-messages{
@@ -50,15 +63,13 @@ display: flex;
 }
 
 .my-txt-content{
-  /* margin-left: 50px; */
-  background: whitesmoke;
-  color: black;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 5px;
-  font-size: 18px;
-  /* line-height: 18px; */
-  margin-bottom: 16px;
+    color: black;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 16px;
+    display: flex;
+    /* flex-direction: row-reverse; */
 
   
 }
