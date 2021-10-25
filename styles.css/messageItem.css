@@ -1,6 +1,8 @@
 .container-messages {
   /* display: flex; */
   /* justify-content: flex-end; */
+  
+  
 }
 .container-user {
     display: flex;
@@ -30,7 +32,33 @@
 .btn-Remove {
   border-radius: 4px;
   background-color: none;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
+.my-container-messages{
+  display: flex;
+  justify-content: flex-end;
 
+}
+
+.my-container-user{
+display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    justify-content: flex-end;
+}
+
+.my-txt-content{
+  /* margin-left: 50px; */
+  background: whitesmoke;
+  color: black;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+  font-size: 18px;
+  /* line-height: 18px; */
+  margin-bottom: 16px;
+
+  
+}

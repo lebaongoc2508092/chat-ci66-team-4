@@ -17,3 +17,16 @@
 input[type="file"] {
     display: none;
 }
+
+
+
+.footer-container{
+    position: relative;
+}
+
+.container-composer{
+    position: fixed;
+    right: 25%;
+    bottom: 0;
+    left: 25%;
+}

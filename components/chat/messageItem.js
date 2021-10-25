@@ -9,7 +9,7 @@ class MessageItem {
   $txtContent = document.createElement("div");
   $btnRemoveContent = document.createElement("button");
 
-  constructor(content, displayName, avatar) {
+  constructor(content, displayName, avatar,sender) {
     this.$txtContent.innerText = content;
     this.$txtDisplayName.innerText = displayName;
     this.$imgAvatar.src = avatar;
@@ -30,6 +30,14 @@ class MessageItem {
     this.$containerContent.appendChild(this.$txtContent);
     this.$containerContent.appendChild(this.$btnRemoveContent);
     this.$btnRemoveContent.addEventListener("click", this.handleDelMessage);
+
+    if(displayName===firebase.auth().currentUser.displayName){   // hỏi thầy phần sender
+      this.$container.classList.add("my-container-messages")
+      this.$containerUser.classList.add("my-container-user")
+      this.$containerContent.classList.add("my-txt-content")
+      this.$imgAvatar.style.visibility="hidden"
+      this.$txtDisplayName.style.visibility="hidden"
+    }
   }
   handleDelMessage = () => {
 
@@ -44,5 +52,8 @@ class MessageItem {
         console.error("Error removing document: ", error);
       });
   };
+
+
+
 }
 export { MessageItem };
