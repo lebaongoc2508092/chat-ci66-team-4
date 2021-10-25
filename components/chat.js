@@ -39,7 +39,7 @@ class Chat {
 
     this.$containerMiddle.appendChild(this.$titleBar.$container);
     this.$containerMiddle.appendChild(this.$messageList.$container);
-
+      this.$containerMiddle.appendChild(this.$composer.$container)
     this.$containerRight.appendChild(this.$userList.$container);
 
     this.$containerMiddle.appendChild(this.$composer.$container);
