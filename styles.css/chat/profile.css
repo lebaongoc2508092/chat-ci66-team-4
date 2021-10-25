@@ -70,12 +70,6 @@
     font-size: 29px;
     font-family: 'Amatic SC', cursive;
     padding-top: 8px;
+    cursor: pointer;
 }
 
-.container-conversation-list {
-    background-color: #96bef1;
-    color: white;
-    align-items: center;
-    border-top: 5px solid white;
-    flex: 2;
-}

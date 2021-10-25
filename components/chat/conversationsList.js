@@ -3,6 +3,8 @@ import { ConversationItem } from "./conversationItems.js";
 
 class ConversationsList {
   $container = document.createElement("div");
+  $headerConversationList = document.createElement("div");
+  $txtConversationsList = document.createElement("p")
   $btnCreatConversations = document.createElement("button");
   $createConversationForm = new CreateConversationForm();
 
@@ -10,14 +12,21 @@ class ConversationsList {
   conversationItems = [];
 
   constructor() {
-    this.$btnCreatConversations.innerHTML = "+ Tạo mới một đoạn hội thoại";
+    this.$btnCreatConversations.innerHTML = "+";
     this.$btnCreatConversations.addEventListener(
       "click",
       this.handleCreateConversationClick
     );
-    this.$container.appendChild(this.$btnCreatConversations);
+    this.$txtConversationsList.innerHTML = "Chat"
+
+      this.$container.appendChild(this.$headerConversationList)
+    this.$headerConversationList.appendChild(this.$txtConversationsList)
+    this.$headerConversationList.appendChild(this.$btnCreatConversations);
     this.$container.appendChild(this.$createConversationForm.$container);
     this.$container.classList.add("container-conversation-list")
+    this.$headerConversationList.classList.add("header-conversation-list")
+    this.$txtConversationsList.classList.add("txt-conversations-list")
+    this.$btnCreatConversations.classList.add("btn-creat-conversations")
   }
 
   setOnConversationItemClick = (listener) => {
