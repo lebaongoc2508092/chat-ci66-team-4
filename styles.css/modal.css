@@ -12,7 +12,7 @@
   }
   
   .modal-container {
-    background: white;
+    background: #000a12;
     height: 500px;
     border-radius: 5px;
     display: flex;
@@ -29,7 +29,7 @@
     padding: 10px 20px;
     margin-bottom: 1px;
     font-size: 24px;
-    color:  #f9a825;
+    color:  #7c4dff;
     font-weight: bold;
 
   }
@@ -41,7 +41,7 @@
     font-family: "Roboto";
   }
 .conversationNameInput {
-    color:  #f9a825;
+    color:  #7c4dff;
      
     font-size: 16px;
     line-height: 16px;
@@ -66,8 +66,8 @@
     cursor: pointer;
   }
   .btnCancel {
-    background-color:  #f9a825;
-    color: white;
+    background:#000a12; 
+    color: #7c4dff;
     font-size: 16px;
     line-height: 16px;
     border: none;

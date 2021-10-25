@@ -36,6 +36,22 @@
 }
 
 .containerMessageIteam{
+    margin: 5px;
+    height: 60px;
+    width: 96%;
+    display: flex;
+    border-radius: 15px;
+    border: 1px solid #7c4dff;
+}
+.messageImgProfile{
     height: 50px;
-    background: red;
+    border-radius: 50%;
+    padding: 5px;
+}
+.txtNameMessage{
+    color: aqua;
+    padding: 14px;
+}
+.noOfUser{
+    margin-top: 40px;
 }

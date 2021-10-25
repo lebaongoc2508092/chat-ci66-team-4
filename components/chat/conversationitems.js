@@ -15,7 +15,7 @@ class ConversationItem {
 
     this.$txtName.innerHTML = name;
     this.$NoOfUser.innerHTML = " (" + users.length + ") online";
-    // this.$messageImgProfile.src = "https://media1.giphy.com/avatars/Cubemelt/lxyAsGa7vlEo.gif"
+    this.$messageImgProfile.src = "https://i.redd.it/dcclh0ltks671.gif"
 
     this.$container.appendChild(this.$messageImgProfile)
     this.$container.appendChild(this.$txtName);
@@ -23,7 +23,7 @@ class ConversationItem {
 
     this.$container.classList.add("containerMessageIteam");
     this.$messageImgProfile.classList.add("messageImgProfile");
-    this.$txtName.classList.add("txtName");
+    this.$txtName.classList.add("txtNameMessage");
     this.$NoOfUser.classList.add("noOfUser");
   }
 
