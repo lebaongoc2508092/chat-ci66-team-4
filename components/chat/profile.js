@@ -2,17 +2,19 @@ import { ModalOptions } from "../share/modalOptions.js";
 
 class Profile {
   $container = document.createElement("div");
-
+  $headerProfile = document.createElement("div");
+  $bodyProfile = document.createElement("div");
+  $footerProfile = document.createElement("div");
+  
   $avatar = document.createElement("img");
-
   $displayName = document.createElement("div");
   $birthdate = document.createElement("div");
   $country = document.createElement("div");
   $phoneNumber = document.createElement("div");
 
   $options = new ModalOptions();
-  $optionsClick = document.createElement("button");
-  $btnLogout = document.createElement("button");
+  $optionsClick = document.createElement("a");
+  $btnLogout = document.createElement("a");
 
   constructor() {
     this.setProfileAvatar();
@@ -25,29 +27,37 @@ class Profile {
     this.$optionsClick.addEventListener("click", this.handleShowOptionProfile);
 
     this.$btnLogout.type = "button";
-    this.$btnLogout.innerHTML = "Logout";
+    this.$btnLogout.innerHTML = "Logout!!!";
 
-    this.$container.appendChild(this.$avatar);
-
-    this.$container.appendChild(this.$displayName);
-    this.$container.appendChild(this.$birthdate);
-    this.$container.appendChild(this.$country);
-    this.$container.appendChild(this.$phoneNumber);
-
-    this.$container.appendChild(this.$options.$container);
-    this.$container.appendChild(this.$optionsClick);
-    this.$container.appendChild(this.$btnLogout);
-
+    this.$container.appendChild(this.$headerProfile)
+    this.$headerProfile.appendChild(this.$avatar);
+    this.$headerProfile.appendChild(this.$displayName);
+    this.$headerProfile.appendChild(this.$optionsClick);
+    
+    this.$container.appendChild(this.$bodyProfile)
+    this.$bodyProfile.appendChild(this.$birthdate);
+    this.$bodyProfile.appendChild(this.$country);
+    this.$bodyProfile.appendChild(this.$phoneNumber);
+    
+    this.$container.appendChild(this.$footerProfile)
+    this.$footerProfile.appendChild(this.$btnLogout);
+    this.$footerProfile.appendChild(this.$options.$container);
+    
     this.$btnLogout.addEventListener("click", this.handleLogout);
 
     this.$options.setonCancelClick(() => {
       this.setVisible(false);
     });
 
+    this.$headerProfile.classList.add("headerProfile")
     this.$avatar.classList.add("avatar");
-    this.$displayName.classList.add("displayname");
+    this.$displayName.classList.add("displaynameProfile");
+    this.$optionsClick.classList.add("btnOptionsClick");
+    this.$bodyProfile.classList.add("bodyProfile");
+    this.$footerProfile.classList.add("footerProfile");
     this.$options.$container.classList.add("options");
-    this.$btnLogout.classList.add("btnGrpLogin");
+    this.$btnLogout.classList.add("btnLogoutProfile");
+
   }
 
   handleShowOptionProfile = () => {
