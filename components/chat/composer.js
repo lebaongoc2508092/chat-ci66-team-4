@@ -13,27 +13,29 @@ class Composer {
   $selectFile = document.createElement("input");
   $btnUploadFile = document.createElement("button");
   $messageList = new MessageItem();
+  $i=document.createElement("i")
 
   constructor() {
     this.$selectFile.setAttribute("type", "file");
 
     this.$input.type = "text";
-<<<<<<< Updated upstream
+
     this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé !!!";
-=======
+
     this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé";
     this.$label.innerHTML = "Chọn File";
->>>>>>> Stashed changes
+
 
     this.$btnEmo.type = "button";
-<<<<<<< Updated upstream
+    this.$btnEmo.innerHTML="👍"
 
-=======
+
+
     this.$i.setAttribute("class", "fas fa-paper-plane");
     this.$selectFile.setAttribute("id", "photo");
     this.$btnUploadFile.type = "button";
     this.$btnUploadFile.innerHTML = "Upload";
->>>>>>> Stashed changes
+
 
     this.$input.classList.add("input-chat");
     this.$btnEmo.classList.add("button-emo");
