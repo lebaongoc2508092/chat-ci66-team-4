@@ -28,7 +28,6 @@ class PreviewAva {
         this.$btnCUP.appendChild(this.$btnUploadAva);
         
 
-        // this.$btnUploadAva.onclick = function(){uploadImage()}
         this.$btnUploadAva.addEventListener("click", this.uploadImage);
         
         this.$btnChooseAva.addEventListener("change", function(event) {
@@ -53,13 +52,12 @@ class PreviewAva {
             .then(snapshot => snapshot.ref.getDownloadURL())
             .then(url => {
                 let imageUserProfile = url;
-                console.log(imageUserProfile);
                 const user = firebase.auth().currentUser
                 user.updateProfile({
                     photoURL: imageUserProfile
                 }).then(() => {
                     alert("User update profile avatar successfully");
-                }).catch(consle.error)  
+                }).catch(console.error)  
             }) 
             .catch(console.error)   
         }
