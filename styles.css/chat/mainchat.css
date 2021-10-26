@@ -3,7 +3,7 @@
     
     height: 100vh;
     display: flex; 
-    background-color: black;
+    background-color:#000a12;
 }
 .containerleft {
     flex: 1;
@@ -13,92 +13,13 @@
 }
 .containermiddle {
     flex: 2;
-    background-color: black;
-    border: 1px solid #fbc02d;
     display: flex;
     flex-direction:column;
-    
+    border: 1px solid #263238;
 }
 
 .containerright {
     flex: 1;
 }
 
-.container-message-list {
-    color: white;
-    font-weight: 800;
-    height: 100%;
-    display: flex;
-    flex-direction:column-reverse;
-    overflow-y: scroll;
-    margin-bottom: 55px;
-}
 
-
-.button-emo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 8px;
-    background-color: transparent;
-    font-size: 24px;
-    border: none;
-}
-.button-emo:hover {
-    cursor: pointer;
-    opacity: 0.7;
-    font-size: 28px;
-}
-
-.button-send {
-    width: 40px;
-    height: 40px;
-    color:#DAA520;
-    border: none;
-    background-color: transparent;
-     border-radius:26%;
-    font-size: 26px;
-    font-weight: bold;
-}
-.button-send:hover {
-    cursor: pointer;
-    opacity: 0.7;
-}
-
-
-.container-composer{
-    background: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    padding: 5px;
-
-}
-.input-chat {
-    margin: auto;
-    margin-right: 5px;
-    width: 80%;
-    padding: 10px;
-    background: rgb(212, 212, 212);
-    border: none;
-    border-radius: 20px;
-}
-
-input[type="button"] {
-    padding: 0 20px;
-    margin-right: 5px;
-    font-size: 24px;
-    background: yellow;
-}
-
-span {
-    display: inline-block;
-    color: #fbc02d;
-    font-size: 24px;
-    font-weight: bold;
-}
-.title {
-    background-color: white;
-    display: flex;
-    border: 1px solid #fbc02d;
-    padding: 15px;
-}

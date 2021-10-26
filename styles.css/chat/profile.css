@@ -1,13 +1,12 @@
 .container-profile {
     background-image: url(https://media.giphy.com/media/gGrLR11aNTwad41Qip/giphy.gif);
-   border-radius:10px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
    height: 373px;
+   border-right: 1px solid #263238;
    
 }
-
-
 .headerProfile{
-  
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -39,7 +38,10 @@
     border-radius: 50px; 
     cursor: pointer;
 }
-
+.btnOptionsClick:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
 
 .bodyProfile{
     color: white;
@@ -61,7 +63,6 @@
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
     width: 100%;
-
 }
 .btnLogoutProfile{
     /* margin-top: 10px; */
@@ -72,6 +73,10 @@
     font-family: 'Amatic SC', cursive;
     padding-top: 8px;
     cursor: pointer;
+}
+.btnLogoutProfile:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 

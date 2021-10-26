@@ -10,16 +10,21 @@ class UserList {
 
   constructor() {
     this.$container.appendChild(this.$form);
+    this.$container.appendChild(this.$btnLeave);
     this.$container.appendChild(this.$userList);
 
     this.$form.appendChild(this.$input);
     this.$form.appendChild(this.$btnAdd);
-    this.$container.appendChild(this.$btnLeave);
 
     this.$input.type = "email";
-    this.$input.placeholder = "Nhập Email ...";
-    this.$btnAdd.innerHTML = "Thêm";
-    this.$btnLeave.innerHTML = "Rời đi";
+    this.$input.placeholder = "Thêm thành viên";
+    this.$btnLeave.innerHTML = "Rời nhóm";
+
+    this.$form.classList.add("formUserList")
+    this.$input.classList.add("inputemailtoGrp");
+    this.$btnAdd.classList.add("btnAdd");
+    this.$userList.classList.add("userList");
+    this.$btnLeave.classList.add("btnLeave");
     this.$btnLeave.addEventListener("click", this.handleLeave);
     this.$form.addEventListener("submit", this.handleSubmit);
   }

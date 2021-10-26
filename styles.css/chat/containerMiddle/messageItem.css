@@ -1,8 +1,6 @@
 .container-messages {
   /* display: flex; */
   /* justify-content: flex-end; */
-  
-  
 }
 .container-user {
     display: flex;
@@ -15,13 +13,14 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 12px;
+  object-fit: cover;
 }
 
 .txt-content {
   margin-left: 50px;
   background: whitesmoke;
   color: black;
-  border-radius: 5px;
+  border-radius: 10px;
   display: inline-block;
   padding: 5px;
   font-size: 18px;

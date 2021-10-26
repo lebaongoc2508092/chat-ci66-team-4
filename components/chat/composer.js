@@ -8,7 +8,6 @@ class Composer {
   $input = document.createElement("input");
   $btnEmo = document.createElement("button");
   $btnSend = document.createElement("button");
-  $i = document.createElement("i");
   $label = document.createElement("label");
   $selectFile = document.createElement("input");
 
@@ -17,12 +16,9 @@ class Composer {
 
 
     this.$input.type = "text";
-    this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé";
-    this.$label.innerHTML = "Chọn File"
+    this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé !!!";
 
-    this.$btnEmo.innerHTML = "👍";
     this.$btnEmo.type = "button";
-    this.$i.setAttribute("class", "fas fa-paper-plane");
 
 
     this.$input.classList.add("input-chat");
@@ -47,7 +43,6 @@ class Composer {
     this.$container_composer.appendChild(this.$btnSend);
 
     this.$btnEmo.addEventListener("click", this.handleBtnEmoClick);
-    this.$btnSend.appendChild(this.$i);
 
     //this.$btnSend.addEventListener("click", this.handleBtnSend);
     this.$form.addEventListener("submit", this.handleSubmit);
