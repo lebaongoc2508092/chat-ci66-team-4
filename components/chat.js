@@ -98,7 +98,7 @@ class Chat {
         snapshot.docChanges().forEach((change) => {
           // console.log(change.type);
           if (change.type === "added")
-            this.$messageList.addMessage(change.doc.data(),change.doc.id);
+            this.$messageList.addMessage(change.doc.data(),change.doc.id);            
         });
         
       });

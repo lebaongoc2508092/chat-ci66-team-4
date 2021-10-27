@@ -21,7 +21,6 @@ class Composer {
     this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé !!!";
 
     this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé";
-    this.$label.innerHTML = "Chọn File";
 
     this.$btnEmo.type = "button";
 
@@ -128,7 +127,7 @@ class Composer {
     this.$input.value = "";
   };
 
-  uploadImage = () => {
+  uploadImage = () => {// giong ham send tin nhan
     const ref = firebase.storage().ref();
     const file = document.getElementById("photo").files[0];
     const metadata = {
