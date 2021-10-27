@@ -13,9 +13,6 @@ class ModalOptions {
   // $frameAva = document.createElement("div");
   $name = document.createElement("div")
   $email = document.createElement("div")
-  $birthdate = document.createElement("div")
-  $country = document.createElement("div")
-  $phoneNumber = document.createElement("div")
 
   $passwordChange = document.createElement("a");
 
@@ -43,9 +40,6 @@ class ModalOptions {
 
     this.$body.appendChild(this.$name);
     this.$body.appendChild(this.$email);
-    this.$body.appendChild(this.$birthdate);
-    this.$body.appendChild(this.$country);
-    this.$body.appendChild(this.$phoneNumber);
     this.$body.appendChild(this.$passwordChange);
     this.$body.classList.add("bodyModalOptions");
     this.$passwordChange.classList.add("btnChangePassword");
@@ -64,9 +58,6 @@ class ModalOptions {
       // The user object has basic properties such as display name, email, etc.
       const displayName = user.displayName;
       const email = user.email;
-      const birthdate = user.birthdate;
-      const country = user.country;
-      const phoneNumber = user.phoneNumber;
     
       const photoURL = user.photoURL;
       const emailVerified = user.emailVerified;
@@ -77,9 +68,6 @@ class ModalOptions {
       const uid = user.uid;
       this.$name.innerHTML="Tên: " + displayName;
       this.$email.innerHTML="Email: " + email;
-      this.$birthdate.innerHTML="Ngày sinh: " + birthdate;
-      this.$country.innerHTML="Quốc tịch: " + country;
-      this.$phoneNumber.innerHTML="SĐT: " + phoneNumber;
     }
 
   };

@@ -23,9 +23,10 @@ class MessageItem {
     this.$imgAvatar.src = avatar;
     this.$i.setAttribute("class", "far fa-trash-alt");
     this.$btnRemoveContent.appendChild(this.$i);
-    this.id = id;
+    this.id = id;// this.id = id (id la cai lay duoc tu tren firbase tra ve)
     console.log(id);
 
+    this.$imgContent.classList.add('imgContent')
     this.$container.classList.add("container-messages");
     this.$imgAvatar.classList.add("img-avatar");
     this.$containerUser.classList.add("container-user");

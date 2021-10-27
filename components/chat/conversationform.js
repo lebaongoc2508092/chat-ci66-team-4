@@ -1,11 +1,9 @@
 import { Modal } from "../share/modal.js";
 import { InputGroup } from "../share/inputGroup.js";
-// import { inputImage } from "./image.js";
 
 class CreateConversationForm {
   $container = document.createElement("div");
   $modal = new Modal();
-  // inputImage = new inputImage();
 
   $form = document.createElement("form");
   $conversationNameInput = new InputGroup("Tạo mới ", "text", "Nhập tên đoạn hội thoại");
@@ -14,12 +12,12 @@ class CreateConversationForm {
     this.$conversationNameInput.$container.classList.add("conversationNameInput")
 
     this.$container.appendChild(this.$modal.$container);
-    // this.$container.appendChild(this.inputImage.$container);
     this.$container.style.visibility = "hidden";
 
 
     this.$modal.setBody(this.$form);
     this.$modal.setonConfirmClick(this.handleCreateConversation);
+    
     this.$modal.setonCancelClick(() => {
       this.setVisible(false);
     });

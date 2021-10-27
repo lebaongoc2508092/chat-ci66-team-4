@@ -30,10 +30,6 @@ class Register {
   $form = document.createElement("form");
   $inputGroupEmail = new InputGroup("", "email", "Nhập email đăng ký");
   $inputGroupDisplayName = new InputGroup("", "text", "Nhập tên đăng ký");
-  $inputGroupBirthDate = new InputGroup("", "date", "Nhập ngày tháng năm sinh");
-  $inputGroupCountry = new InputGroup("", "text", "Bạn đến từ đâu");
-  $inputGroupphoneNumber = new InputGroup("", "tel", "Nhập số điện thoại");
-
   $inputGroupPassword = new InputGroup(
     "",
     "password",
@@ -57,8 +53,6 @@ class Register {
 
   $footer = document.createElement("div");
   $txtFooter = document.createElement("span");
-
-
 
   constructor() {
     // this.$container.classList.add("navbar")
@@ -128,9 +122,6 @@ class Register {
 
     this.$form.appendChild(this.$inputGroupEmail.$container);
     this.$form.appendChild(this.$inputGroupDisplayName.$container);
-    this.$form.appendChild(this.$inputGroupBirthDate.$container);
-    this.$form.appendChild(this.$inputGroupCountry.$container);
-    this.$form.appendChild(this.$inputGroupphoneNumber.$container);
     this.$form.appendChild(this.$inputGroupPassword.$container);
     this.$form.appendChild(this.$inputGroupConfirmPassword.$container);
     this.$form.appendChild(this.$btnRegister);
@@ -138,9 +129,6 @@ class Register {
 
     this.$inputGroupEmail.$container.classList.add("inputBox");
     this.$inputGroupDisplayName.$container.classList.add("inputBox");
-    this.$inputGroupBirthDate.$container.classList.add("inputBox");
-    this.$inputGroupCountry.$container.classList.add("inputBox");
-    this.$inputGroupphoneNumber.$container.classList.add("inputBox");
     this.$inputGroupPassword.$container.classList.add("inputBox");
     this.$inputGroupConfirmPassword.$container.classList.add("inputBox");
 
@@ -176,7 +164,7 @@ class Register {
     } else {
       this.$inputGroupEmail.setErrorMessage("");
     }
-    
+
     const displayName = this.$inputGroupDisplayName.getValue();
     if (!displayName) {
       this.$inputGroupDisplayName.setErrorMessage(
@@ -185,34 +173,7 @@ class Register {
     } else {
       this.$inputGroupDisplayName.setErrorMessage("");
     }
-    
-    const birthdate = this.$inputGroupBirthDate.getValue();
-    if (!birthdate) {
-      this.$inputGroupBirthDate.setErrorMessage(
-        "Please enter your birthdate"
-        );
-    } else {
-      this.$inputGroupBirthDate.setErrorMessage("");
-    }
-  
-    const country = this.$inputGroupCountry.getValue();
-    if (!country) {
-      this.$inputGroupCountry.setErrorMessage(
-        "Please enter your country's name"
-        );
-    } else {
-      this.$inputGroupCountry.setErrorMessage("");
-    }
-  
-    const phoneNumber = this.$inputGroupphoneNumber.getValue();
-    if (!phoneNumber) {
-      this.$inputGroupphoneNumber.setErrorMessage(
-        "Please enter your phoneNumber number"
-        );
-    } else {
-      this.$inputGroupphoneNumber.setErrorMessage("");
-    }
-  
+
     const password = this.$inputGroupPassword.getValue();
     if (password.length < 8) {
       this.$inputGroupPassword.setErrorMessage(
@@ -221,7 +182,7 @@ class Register {
     } else {
       this.$inputGroupPassword.setErrorMessage("");
     }
-    
+
     const passwordConfirm = this.$inputGroupConfirmPassword.getValue();
     if (passwordConfirm == password) {
       this.$inputGroupConfirmPassword.setErrorMessage("");
@@ -246,15 +207,13 @@ class Register {
             user
               .updateProfile({
                 displayName: this.$inputGroupDisplayName.getValue(),
-                birthdate: this.$inputGroupBirthDate.getValue(),
-                country: this.$inputGroupCountry.getValue(),
-                phoneNumber: this.$inputGroupphoneNumber.getValue(),
+                email: this.$inputGroupEmail.getValue()
               })
               .then(() => {
                 // Update successful
                 // ...
-                console.log(user)
-                console.log(user.phoneNumber)
+                console.log(user);
+                console.log(user.phoneNumber);
               })
               .catch((error) => {
                 // An error occurred

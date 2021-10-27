@@ -8,9 +8,7 @@ class Profile {
   
   $avatar = document.createElement("img");
   $displayName = document.createElement("div");
-  $birthdate = document.createElement("div");
-  $country = document.createElement("div");
-  $phoneNumber = document.createElement("div");
+  $emailProfile = document.createElement("div");
 
   $options = new ModalOptions();
   $optionsClick = document.createElement("a");
@@ -23,7 +21,6 @@ class Profile {
     this.$container.classList.add("container-profile");
 
     this.$options.$container.style.visibility = "hidden";
-    // this.$options.$container.innerHTML = "Option";
     this.$optionsClick.addEventListener("click", this.handleShowOptionProfile);
 
     this.$btnLogout.type = "button";
@@ -35,9 +32,7 @@ class Profile {
     this.$headerProfile.appendChild(this.$optionsClick);
     
     this.$container.appendChild(this.$bodyProfile)
-    this.$bodyProfile.appendChild(this.$birthdate);
-    this.$bodyProfile.appendChild(this.$country);
-    this.$bodyProfile.appendChild(this.$phoneNumber);
+    this.$bodyProfile.appendChild(this.$emailProfile);
     
     this.$container.appendChild(this.$footerProfile)
     this.$footerProfile.appendChild(this.$btnLogout);
@@ -72,19 +67,13 @@ class Profile {
     const user = firebase.auth().currentUser;
     if (user !== null) {
       const displayName = user.displayName;
-      const birthdate = user.birthdate;
-      const country = user.country;
-      const phoneNumber = user.phoneNumber;
-
       const email = user.email;
       const photoURL = user.photoURL;
       const emailVerified = user.emailVerified;
       const uid = user.uid;
       this.$avatar.src = photoURL;
       this.$displayName.innerHTML = displayName;
-      this.$birthdate.innerHTML = "Ngày sinh: " + birthdate;
-      this.$country.innerHTML = "Quốc tịch: " + country;
-      this.$phoneNumber.innerHTML = "SĐT: " + phoneNumber;
+      this.$emailProfile.innerHTML = email;
     }
   };
 

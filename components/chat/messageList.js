@@ -4,7 +4,6 @@ class MessageList {
 
   constructor() {}
   addMessage = (message,id) => {
-    console.log(message);
     const item = new MessageItem(
       message.content,
       message.displayName,
@@ -18,5 +17,10 @@ class MessageList {
   clearMessage = () => {
     this.$container.innerHTML = "";
   };
+  // deleteMessage = () => {
+  //   const item = new MessageItem('');
+  //   this.$container.prepend(item.$container);
+  //   // this.$container.classList.add("container-message-list");
+  // }
 }
 export { MessageList };

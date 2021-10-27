@@ -56,6 +56,7 @@ input[type="file"] {
     background-repeat: no-repeat;
     background-position: center;
     border: none;
+    color: transparent;
 }
 .button-emo:hover {
     cursor: pointer;

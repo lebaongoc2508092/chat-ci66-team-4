@@ -96,10 +96,9 @@ class Chat {
       .onSnapshot((snapshot) => {
         //console.log(this.activeConversation);
         snapshot.docChanges().forEach((change) => {
-          console.log(change.type);
+          // console.log(change.type);
           if (change.type === "added")
             this.$messageList.addMessage(change.doc.data(),change.doc.id);
-            // if(change.type === "removed")//viet them ham delete
         });
         
       });

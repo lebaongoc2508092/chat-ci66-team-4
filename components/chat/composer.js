@@ -33,7 +33,7 @@ class Composer {
 
 
     this.$btnEmo.type = "button";
-    this.$btnEmo.innerHTML="👍"
+    this.$btnEmo.innerHTML = "👍"
 
 
 
