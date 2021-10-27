@@ -1,4 +1,3 @@
-// import { MessageItem } from "./messageItem.js";
 class Composer {
   activeConversation = null;
 
@@ -12,7 +11,7 @@ class Composer {
   $label = document.createElement("label");
   $selectFile = document.createElement("input");
   $btnUploadFile = document.createElement("button");
-  // $messageList = new MessageItem();
+  $i=document.createElement("i")
 
   constructor() {
     this.$selectFile.setAttribute("type", "file");
@@ -31,6 +30,18 @@ class Composer {
     this.$selectFile.setAttribute("id", "photo");
     this.$btnUploadFile.type = "button";
     this.$btnUploadFile.innerHTML = "Upload";
+
+
+    this.$btnEmo.type = "button";
+    this.$btnEmo.innerHTML="👍"
+
+
+
+    this.$i.setAttribute("class", "fas fa-paper-plane");
+    this.$selectFile.setAttribute("id", "photo");
+    this.$btnUploadFile.type = "button";
+    this.$btnUploadFile.innerHTML = "Upload";
+
 
     this.$input.classList.add("input-chat");
     this.$btnEmo.classList.add("button-emo");
