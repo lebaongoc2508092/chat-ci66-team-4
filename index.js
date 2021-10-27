@@ -11,7 +11,7 @@ const loginScreen = new Login();
 setScreen(loginScreen.$container)
 
 firebase.auth().onAuthStateChanged((user) => {
-  //console.log("Hello ", user)
+  console.log("Hello ", user)
   if (user != null) {
     const chatScreen = new Chat();
     setScreen(chatScreen.$container);

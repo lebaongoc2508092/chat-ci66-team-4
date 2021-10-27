@@ -3,11 +3,14 @@ class MessageList {
   $container = document.createElement("div");
 
   constructor() {}
-  addMessage = (message) => {
+  addMessage = (message,id) => {
+    console.log(message);
     const item = new MessageItem(
       message.content,
       message.displayName,
-      message.avatar
+      message.avatar,
+      id,
+      message.messageType
     );
     this.$container.prepend(item.$container);
     this.$container.classList.add("container-message-list");

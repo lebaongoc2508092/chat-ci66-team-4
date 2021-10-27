@@ -1,4 +1,4 @@
-import { MessageItem } from "./messageItem.js";
+// import { MessageItem } from "./messageItem.js";
 class Composer {
   activeConversation = null;
 
@@ -12,28 +12,25 @@ class Composer {
   $label = document.createElement("label");
   $selectFile = document.createElement("input");
   $btnUploadFile = document.createElement("button");
-  $messageList = new MessageItem();
+  // $messageList = new MessageItem();
 
   constructor() {
     this.$selectFile.setAttribute("type", "file");
 
     this.$input.type = "text";
-<<<<<<< Updated upstream
+
     this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé !!!";
-=======
+
     this.$input.placeholder = "Hãy vui vẻ khi nhắn tin nhé";
     this.$label.innerHTML = "Chọn File";
->>>>>>> Stashed changes
 
     this.$btnEmo.type = "button";
-<<<<<<< Updated upstream
 
-=======
-    this.$i.setAttribute("class", "fas fa-paper-plane");
+
+
     this.$selectFile.setAttribute("id", "photo");
     this.$btnUploadFile.type = "button";
     this.$btnUploadFile.innerHTML = "Upload";
->>>>>>> Stashed changes
 
     this.$input.classList.add("input-chat");
     this.$btnEmo.classList.add("button-emo");
@@ -131,13 +128,17 @@ class Composer {
     uploadIMG
       .then((snapshot) => snapshot.ref.getDownloadURL())
       .then((url) => {
-        const photoUrl = url;
-        console.log(photoUrl)
-        const $img = document.createElement("img");
-        $img.src = photoUrl;
+        db.collection("messages").add({
+          content: url,
+          sender: firebase.auth().currentUser.email,
+          displayName: firebase.auth().currentUser.displayName,
+          avatar: firebase.auth().currentUser.photoURL,
+          ConversationId: this.activeConversation.id,
+          sentAt: firebase.firestore.FieldValue.serverTimestamp(), //add new
+          messageType: "photo"
+        });
       })
       .catch(console.error);
-      this.$containerContent.appendChild(this.$img);
   };
 }
 
