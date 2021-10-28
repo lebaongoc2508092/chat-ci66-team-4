@@ -13,9 +13,9 @@ class MessageItem {
   id;
 
   constructor(content, displayName, avatar, id, messageType) {
-    console.log(messageType);
     if (messageType === "photo") {
       this.$imgContent.src = content;
+      this.$txtContent.style.visibility = "hidden";
     } else {
       this.$txtContent.innerText = content;
     }
@@ -24,7 +24,7 @@ class MessageItem {
     this.$i.setAttribute("class", "far fa-trash-alt");
     this.$btnRemoveContent.appendChild(this.$i);
     this.id = id;// this.id = id (id la cai lay duoc tu tren firbase tra ve)
-    console.log(id);
+
 
     this.$imgContent.classList.add('imgContent')
     this.$container.classList.add("container-messages");
@@ -56,6 +56,7 @@ class MessageItem {
       this.$txtDisplayName.style.display = "none";
       this.$containerContent.appendChild(this.$btnRemoveContent);
       this.$containerContent.appendChild(this.$txtContent);
+      // this.$txtContent.appendChild(this.$imgContent);
     }
   }
   handleDelMessage = () => {

@@ -45,6 +45,7 @@ class Composer {
     this.$input.classList.add("input-chat");
     this.$btnEmo.classList.add("button-emo");
     this.$btnSend.classList.add("button-send");
+    this.$btnUploadFile.classList.add("button-upload-file");
     this.$container.classList.add("footer-container");
 
     this.$container.appendChild(this.$form);

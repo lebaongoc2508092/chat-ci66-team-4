@@ -15,7 +15,7 @@
 .modalOptionsContainerBackground{
     background: #000a12;
     width: 400px;
-    height: 90%;
+    height: 80%;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -23,6 +23,7 @@
     color: white;
     position:absolute;
     bottom: 61px;
+    margin-bottom: 3%;
 }
 
 .frameAva{
@@ -82,7 +83,6 @@
 }
 .btnUploadAva:hover{
     opacity: 0.7;
-
 }
 
 .bodyModalOptions{
@@ -90,7 +90,7 @@
     margin-left: 10px;
     font-size: 20px;
     font-weight: 600;
-    line-height: 23px
+    line-height: 25px
 }
 .btnChangePassword{
     color: #7c4dff;
@@ -99,11 +99,18 @@
 }
 .btnChangePassword:hover{
     opacity: 0.9;
-
+}
+.btn-logout{
+    color: red;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.btn-logout:hover{
+    opacity: 0.9;
 }
 
 .footerModalOptions{
-    margin-top: 45px;
+    margin-top: 25px;
     display: flex;
     justify-content: space-around;
     align-items: center;

@@ -15,6 +15,9 @@ class ModalOptions {
   $email = document.createElement("div")
 
   $passwordChange = document.createElement("a");
+  $br = document.createElement("br");
+  $btnLogout = document.createElement("a");
+
 
   $footer = document.createElement("div");
   $btnCancel = document.createElement("button");
@@ -25,6 +28,8 @@ class ModalOptions {
     this.$modalOptionsContainer.classList.add("modalOptionsContainerBackground");
 
     this.$passwordChange.innerHTML = "Change Password";
+    this.$btnLogout.type = "button";
+    this.$btnLogout.innerHTML = "Logout!!!";
     
     this.$btnCancel.innerHTML = "Cancel";
     this.$btnSave.innerHTML = "Save";
@@ -41,6 +46,10 @@ class ModalOptions {
     this.$body.appendChild(this.$name);
     this.$body.appendChild(this.$email);
     this.$body.appendChild(this.$passwordChange);
+    this.$body.appendChild(this.$br)
+    this.$body.appendChild(this.$btnLogout);
+    this.$btnLogout.addEventListener("click", this.handleLogout);
+    this.$btnLogout.classList.add("btn-logout");
     this.$body.classList.add("bodyModalOptions");
     this.$passwordChange.classList.add("btnChangePassword");
     
@@ -76,6 +85,11 @@ class ModalOptions {
     this.$btnCancel.onclick = listener;
     this.$btnSave.onclick = listener;
   };
+
+  handleLogout = () => {
+    firebase.auth().signOut();
+  };
+
 }
 
 export { ModalOptions };
