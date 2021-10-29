@@ -1,4 +1,4 @@
-import { InputGroup } from "./share/inputgroup.js";
+import { InputGroup } from "./share/inputGroup.js";
 import { Register } from "./register.js";
 import { setScreen } from "../index.js";
 
